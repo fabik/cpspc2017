@@ -8,49 +8,50 @@
 % leave this values, if you are not interested
 \info{police}{stdin}{stdout}{100}{2000 ms}{1 GB}
 
-V galaxii je vybudována síť hyperprostorových dálnic.
-Každá dálnice tvoří jednosměrný tunel mezi dvěma planetami.
-Galaktická vláda vybírá planetu, na které postaví policejní stanici.
+V galaxii je vybudována síť hyperprostorových dálnic. Každá dálnice tvoří
+jednosměrný tunel mezi dvěma planetami. Galaktická vláda vybírá planetu, na
+které postaví policejní stanici.
 
-Aby mohla policie efektivně chránit celou galaxii, musí být možné se
-z policejní stanice dopravit prostřednictvím sítě hyperprostorových
-dálnic na každou planetu v galaxii.
+Aby mohla policie efektivně chránit celou galaxii, musí být možné se z policejní
+stanice dopravit prostřednictvím sítě hyperprostorových dálnic na každou planetu
+v galaxii.
 
-Zpáteční cesta z každé planety na policejní stanici po
-hyperprostorových dálnicích už existovat nemusí. Zpátky už policie
-nepotřebuje tolik spěchat, takže se může vydat i po pomalejších cestách
-než po dálnicích.
+Zpáteční cesta z každé planety na policejní stanici po hyperprostorových
+dálnicích už existovat nemusí. Zpátky už policie nepotřebuje tolik spěchat,
+takže se může vydat i po pomalejších cestách než po dálnicích.
 
 Vláda si neví rady, jak najít vhodnou planetu, na které policejní stanici
 postavit, a proto požádala o pomoc vás.
 
 \heading{Úloha}
 
-Je zadána síť jednosměrných hyperprostorových dálnic. Najděte všechny
-planety, ze kterých se dá dostat na všechny ostatní planety v galaxii
-pomocí nějaké posloupností dálnic.
+Je zadána síť jednosměrných hyperprostorových dálnic. Najděte všechny planety,
+ze kterých se dá dostat na všechny ostatní planety v galaxii pomocí nějaké
+posloupností dálnic.
 
 \heading{Vstup}
 
-První řádek vstupu obsahuje dvě celá čísla $N$ a $M$: počet planet a počet dálnic.
+První řádek vstupu obsahuje dvě celá čísla $N$ a $M$: počet planet a počet
+dálnic.
 
-Poté následuje $M$ řádků. Každý z nich obsahuje dvě celá čísla $A_i$ a $B_i$: čísla
-planet, které propojuje $i$-tá dálnice. Každá dálnice je jednosměrná a vede z planety
-$A_i$ do planety $B_i$.
+Poté následuje $M$ řádků. Každý z nich obsahuje dvě celá čísla $A_i$ a $B_i$:
+čísla planet, které propojuje $i$-tá dálnice. Každá dálnice je jednosměrná a
+vede z planety $A_i$ do planety $B_i$.
 
 \bigskip
 \noindent
 Platí, že $1 \leq N, M \leq 10^6$.\
 Pro každé $i$ platí, že $1 \leq A_i, B_i \leq N$ a $A_i \neq B_i$.\\
-Žádné dvě dálnice nespojují stejné planety ve stejném směru. Mohou však spojovat dvě
-stejné planety v opačných směrech.\\
+Žádné dvě dálnice nespojují stejné planety ve stejném směru. Mohou však spojovat
+  dvě stejné planety v opačných směrech.\\
 Ve $30\%$ vstupů navíc platí $1 \leq N \leq 10^3$.
 
 \heading{Výstup}
 
-Na výstupu musí být právě dva řádky. Na prvním řádku musí být celkový počet planet, ze
-kterých se dá dostat na všechny ostatní planety v galaxii. Na druhém řádku musí být
-mezerou oddělená čísla těchto planet. Čísla planet musí být uspořádána vzestupně.
+Na výstupu musí být právě dva řádky. Na prvním řádku musí být celkový počet
+planet, ze kterých se dá dostat na všechny ostatní planety v galaxii. Na druhém
+řádku musí být mezerou oddělená čísla těchto planet. Čísla planet musí být
+uspořádána vzestupně.
 
 \heading{Příklady}
 
@@ -73,7 +74,7 @@ mezerou oddělená čísla těchto planet. Čísla planet musí být uspořádá
 2 3
 \sampleOUT
 0
-
+~
 \sampleEND
 
 \end{document}

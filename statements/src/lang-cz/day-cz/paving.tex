@@ -9,39 +9,48 @@
 \info{paving}{stdin}{stdout}{100}{2000 ms}{1 GB}
 
 V Kocourkově se bude rekonstruovat historické náměstí s mozaikovou dlažbou.
-Náměstí je pokryté bílými a šedými dlažebními kostkami, které jsou uspořádané v obdélníkové mřížce.
+Náměstí je pokryté bílými a šedými dlažebními kostkami, které jsou uspořádané
+v obdélníkové mřížce. Památkáři mají na rekonstrukci dva požadavky:
 
-Památkáři mají na rekonstrukci dva požadavky:
-1. Každý čtverec 2x2 musí obsahovat lichý počet šedých dlaždic.
-2. Některé dlažební kostky jsou památkově chráněné, takže musí zůstat na svém místě.
+\begin{enumerate}[nolistsep]
+\item Každý čtverec 2x2 musí obsahovat lichý počet šedých dlaždic.
+\item Některé dlažební kostky jsou památkově chráněné, takže musí zůstat na svém
+  místě.
+\end{enumerate}
 
-Radní by zajímalo, kolika způsoby je možné náměstí vydláždit tak, aby vyhověli oběma podmínkám památkářů.
+Radní by zajímalo, kolika způsoby je možné náměstí vydláždit tak, aby vyhověli
+oběma podmínkám památkářů. Pomůžete jim?
 
 \heading{Úloha}
 
-Jsou zadány rozměry náměstí a seznam památkově chráněných dlaždic.
-
-Spočítejte, kolika způsoby je možné zvolit barvy ostatních dlaždic tak, aby v každém čtverci 2x2 byl lichý počet šedých dlaždic.
+Jsou zadány rozměry náměstí a seznam památkově chráněných dlaždic. Spočítejte,
+kolika způsoby je možné zvolit barvy ostatních dlaždic tak, aby v každém čtverci
+2x2 byl lichý počet šedých dlaždic.
 
 \heading{Vstup}
 
-První řádek vstupu obsahuje tři celá čísla $N$, $M$ a $K$: počet řádků mřížky, počet sloupců mřížky a počet chráněných dlaždic.
+První řádek vstupu obsahuje tři celá čísla $N$, $M$ a $K$: počet řádků mřížky,
+počet sloupců mřížky a počet památkově chráněných dlaždic.
 
-Poté následuje $K$ řádků. Každý z nich obsahuje tři celá čísla $R_i$, $C_i$ a $G_i$: číslo řádku a číslo sloupce, ve kterém se nachází $i$-tá dlaždice, a barvu $i$-té dlaždice (číslo 0 značí bílou barvu, číslo 1 šedou barvu).
+Poté následuje $K$ řádků popisujících jednotlivé památkově chráněné dlaždice.
+Každý z nich obsahuje tři celá čísla $R_i$, $C_i$ a $G_i$: číslo řádku a číslo
+sloupce, ve kterém se nachází $i$-tá dlaždice, a její barvu (číslo 0 značí bílou
+barvu, číslo 1 šedou barvu).
 
 \bigskip
 \noindent
 Platí, že $2 \leq N,M \leq 10^5$ a $0 \leq K \leq 10^5$.\\
-Pro každé $i$ platí, že $1 \leq R_i \leq N$, $1 \leq C_i \leq M$ a $G_i \in \{ 0, 1 \}$.\\
-Žádné dvě dlaždice nemají shodné souřadnice.\\
+Pro každé $i$ platí, že $1 \leq R_i \leq N$, $1 \leq C_i \leq M$ a
+  $G_i \in \{ 0, 1 \}$.\\
+Žádné dvě památkově chráněné dlaždice nemají shodné souřadnice.\\
 Ve $20\%$ vstupů navíc platí, že $N,M \leq 5$ a $K \leq 5$.\\
 Ve $40\%$ vstupů navíc platí, že $N,M \leq 5000$ a $K \leq 25$.
 
 \heading{Výstup}
 
-Na výstupu musí být právě jeden řádek obsahující počet způsobů, kterými lze náměstí vydláždit.
-
-Protože výsledné číslo může být velmi velké, vypište pouze jeho zbytek po dělení číslem $10^9$.
+Na výstupu musí být právě jeden řádek obsahující počet způsobů, kterými lze
+náměstí vydláždit. Protože výsledné číslo může být velmi velké, vypište pouze
+jeho zbytek po dělení číslem $10^9 + 7$.
 
 \heading{Příklad}
 
