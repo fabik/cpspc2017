@@ -1,0 +1,75 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Police Station}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{police}{stdin}{stdout}{100}{2000 ms}{1 GB}
+
+A network of hyperspace highways is built in the galaxy. Each of the highways
+is a one-directional corridor which connects two planets. Galactic government
+wants to find a planet on which a police station will be built.
+
+In order for the police to protect the whole galaxy, it must be possible to
+travel from the police station to every planet in the galaxy using the
+hyperspace highways network.
+
+It is not necessary that the police can return back to the police station from
+any planet using the hyperspace highways. The police needs not to hurry on the
+way back, and so they can use slower ways than highways.
+
+The government does not know how to deal with finding the suitable planet for
+the police station; therefore, they ask for your help.
+
+\heading{Task}
+
+You are given the network of one-directional hyperspace highways. Find all planets
+from which it is possible to reach all other planets in the galaxy using some
+sequence of highways.
+
+\heading{Input}
+
+The first line of the input contains two integers $N$ a $M$: the number of planets
+and the number of highways.
+
+Then, $M$ more lines follow. Each contains two integers $A_i$ and $B_i$: the numbers
+of planets connected by $i$-th highway. Each of the highways is one-directional and
+can be used to travel from the planet $A_i$ to the planet $B_i$.
+
+\bigskip
+\noindent
+It holds $1 \leq N, M \leq 10^6$.\\
+For all $i$ it holds $1 \leq A_i, B_i \leq N$ and $A_i \neq B_i$.\\
+No two highways have connect equal planets in the same direction. However, they can
+connect equal planets in the opposite direction.\\
+Furthermore, in the $30\%$ of testcases $N \leq 10^3$.
+
+\heading{Output}
+
+\heading{Sample}
+
+\sampleIN
+5 6
+1 3
+1 4
+4 2
+2 1
+2 5
+5 4
+\sampleOUT
+4
+1 2 4 5
+\sampleEND
+
+\sampleIN
+3 2
+1 3
+2 3
+\sampleOUT
+0
+
+\sampleEND
+
+\end{document}
