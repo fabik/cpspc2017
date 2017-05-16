@@ -29,7 +29,7 @@ for input in os.listdir('test'):
     output = input.replace('.in', '.out')
     tmpoutput = 'tmp_' + input.replace('.in', '.out')
 
-    command = Command('./sol-slow < test/' + input + ' > test/' + tmpoutput)
+    command = Command('./sol-30 < test/' + input + ' > test/' + tmpoutput)
     exitcode = command.run(timeout=5)
 
     if exitcode == 0:

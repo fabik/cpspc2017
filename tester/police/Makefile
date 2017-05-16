@@ -1,9 +1,9 @@
 CPPFLAGS = -O2 -Wall -std=c++11
 
-all: sol sol-slow
+all: sol sol-30
 
 clean-sol:
-	rm sol sol-slow
+	rm sol sol-30
 
 clean-test:
 	find test/ -name '*.in' -not -name '00.sample.*' -exec rm {} \;
