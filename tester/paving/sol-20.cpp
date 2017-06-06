@@ -50,8 +50,8 @@ void dfs(int r, int c) {
 int main() {
 	ios::sync_with_stdio(false);
 	cin >> N >> M >> K;
-	assert(N >= 1 && N <= 100000);
-	assert(M >= 1 && M <= 100000);
+	assert(N >= 2 && N <= 100000);
+	assert(M >= 2 && M <= 100000);
 	assert(K >= 0 && K <= 100000);
 	for (int r = 0; r < N; r++) {
 		for (int c = 0; c < M; c++) {

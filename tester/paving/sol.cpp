@@ -35,8 +35,8 @@ int main() {
 	ios::sync_with_stdio(false);
 	int N, M, K;
 	cin >> N >> M >> K;
-	assert(N >= 1 && N <= 100000);
-	assert(M >= 1 && M <= 100000);
+	assert(N >= 2 && N <= 100000);
+	assert(M >= 2 && M <= 100000);
 	assert(K >= 0 && K <= 100000);
 	for (int i = 0; i < (N+M)*2; i++) {
 		parent[i] = i;
