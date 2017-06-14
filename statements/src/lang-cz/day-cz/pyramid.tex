@@ -1,0 +1,74 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Pyramida}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{pyramid}{stdin}{stdout}{100}{2000 ms}{1 GB}
+
+Archeologové právě rozluštili hieroglyfy na stěnách pyramidy. Nápis na jedné ze
+stěn popisuje $N$ posvátných čísel. Všechna čísla, která jsou dělitelná alespoň
+jedním z těchto čísel, jsou také posvátná.
+
+Na $M$ dalších stěnách se píše, že $Q_i$-té nejmenší posvátné číslo má magické
+vlastnosti. Archeology by velmi zajímalo, která čísla mají magické vlastnosti.
+Pomůžete jim to zjistit?
+
+\heading{Úloha}
+
+Je zadáno $N$ kladných celých čísel $A_1, A_2, \ldots, A_N$ a $M$ kladných
+celých čísel $Q_1, Q_2, \ldots, Q_M$. Pro každé $i \in \{ 1, 2, \ldots, M \}$
+najděte $Q_i$-té nejmenší kladné celé číslo, které má tu vlastnost, že je
+dělitelné alespoň jedním z čísel $A_1, A_2, \ldots, A_N$.
+
+\heading{Vstup}
+
+První řádek vstupu obsahuje dvě celá čísla $N$ a $M$. Druhý řádek obsahuje
+mezerou oddělená čísla $A_1$, $A_2$, $\ldots$, $A_N$. Poté následuje $M$ řádků.
+Každý z nich obsahuje celé číslo $Q_i$.
+
+\bigskip
+\noindent
+Platí, že $1 \leq N \leq 15$ a $1 \leq M \leq 50$.\\
+Pro každé $i \in \{ 1, 2, \ldots, N \}$ platí, že $2 \leq A_i \leq 10^{18}$.\\
+Pro součin těchto čísel platí, že $A_1 \cdot A_2 \cdot \ldots \cdot A_N \leq 10^{18}$.\\
+Pro každé $i \in \{ 1, 2, \ldots, M \}$ platí, že $1 \leq Q_i \leq 10^{18}$.\\
+Každé číslo na výstupu bude menší nebo rovno $10^{18}$.\\
+V 10 \% vstupů navíc platí, že $Q_1, Q_2, \ldots, Q_M \leq 10^6$.\\
+Ve 30 \% vstupů navíc platí, že $N \leq 2$.
+
+\heading{Výstup}
+
+Na výstupu musí být právě $M$ řádků. Na $i$-tém z nich musí být $Q_i$-té
+nejmenší kladné celé číslo, které má tu vlastnost, že je dělitelné alespoň
+jedním z čísel $A_1, A_2, \ldots, A_N$.
+
+\heading{Příklad}
+
+\sampleIN
+5 5
+2 5 7 10 11
+1
+2
+3
+10
+20
+\sampleOUT
+2
+4
+5
+14
+28
+\sampleEND
+
+\sampleIN
+2 1
+70 100
+5
+\sampleOUT
+210
+\sampleEND
+
+\end{document}

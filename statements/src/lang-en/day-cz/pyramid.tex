@@ -1,0 +1,74 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Pyramid}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{pyramid}{stdin}{stdout}{100}{2000 ms}{1 GB}
+
+Archaeologists have just deciphered hieroglyphs on walls on a pyramid. Writings
+on one of the walls describes $N$ sacred numbers. All numbers which are
+divisible by at least one of these numbers are also sacred.
+
+The writings on $M$ other walls claim that the $Q_i$-th lowest sacred number has
+magic properties. The archaeologists would like to know which numbers have the
+magic properties. Could you help them with that?
+
+\heading{Task}
+
+You are given $N$ positive integers $A_1, A_2, \ldots, A_N$ and $M$ positive
+integers $Q_1, Q_2, \ldots, Q_M$. For each $i \in \{ 1, 2, \ldots, M \}$ find the
+$Q_i$-th lowest positive integer which is divisible by at least one of the
+integers $A_1, A_2, \ldots, A_N$.
+
+\heading{Input}
+
+The first line of the input contains two integers $N$ a $M$. The second line
+contains space-separated integers $A_1$, $A_2$, $\ldots$, $A_N$. Then, $M$ lines
+follow. Each of them contains an integer $Q_i$.
+
+\bigskip
+\noindent
+It holds $1 \leq N \leq 15$ and $1 \leq M \leq 50$.\\
+For all $i \in \{ 1, 2, \ldots, N \}$ it holds $2 \leq A_i \leq 10^{18}$.\\
+For the product of these numbers it holds $A_1 \cdot A_2 \cdot \ldots \cdot A_N \leq 10^{18}$.\\
+For all $i \in \{ 1, 2, \ldots, M \}$ it holds $1 \leq Q_i \leq 10^{18}$.\\
+Each number on the output is lower than or equal to $10^{18}$.\\
+Furthermore, in the 10 \% of testcases $Q_1, Q_2, \ldots, Q_M \leq 10^6$.\\
+Furthermore, in the 30 \% of testcases $N \leq 2$.
+
+\heading{Output}
+
+Output $M$ lines. The $i$-th line should contain the $Q_i$-th lowest positive
+integer which is divisible by at least one of the integers
+$A_1, A_2, \ldots, A_N$.
+
+\heading{Sample}
+
+\sampleIN
+5 5
+2 5 7 10 11
+1
+2
+3
+10
+20
+\sampleOUT
+2
+4
+5
+14
+28
+\sampleEND
+
+\sampleIN
+2 1
+70 100
+5
+\sampleOUT
+210
+\sampleEND
+
+\end{document}
