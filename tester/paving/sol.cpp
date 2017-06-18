@@ -48,7 +48,7 @@ int main() {
 		assert(c >= 1 && c <= M);
 		assert(g == 0 || g == 1);
 		r--; c--;
-		if (g ^ ((r % 2 == 0) && (c % 2 == 0))) {
+		if (g ^ ((r % 2 == 1) && (c % 2 == 1))) {
 			merge(r, N+c);
 			merge(N+M + r, N+M + N+c);
 		} else {
