@@ -19,3 +19,5 @@ Day SK
 
 Day MIX
 -------
+
+  * **secret** - (graph) determine whether a path between two given points exists in a compressed image
