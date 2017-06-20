@@ -1,0 +1,48 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Brackets}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{template}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+\heading{Task}
+
+A bracket symbol is one of the following: \texttt{()[]\{\}<>}. A correct \textit{bracket expression} is any string consisting of bracket symbols, such that:
+\begin{itemize}
+ \item Every left bracket has a matching right bracket of the same kind, and every right bracket is matched;
+ \item No two pairs of matching brackets cross -- for every two such pairs, one is always contained inside the other.
+\end{itemize}
+
+You are given a graph of $n$ vertices in which every (directed) edge is labeled with one of the bracket symbols. A path in this graph is \textit{valid}, if its edges form a correct bracket expression. For some two vertices $s$ and $t$, determine the length of a shortest valid path between $s$ and $t$.
+
+
+\heading{Input}
+
+On the first line of input there are four integers $n, m, s, t$ ($2 \leq n \leq 100$, $1 \leq m \leq n(n-1)$, $1 \leq s, t \leq n$) -- the number vertices, edges, starting and ending vertex, respectively.
+Each of the following $m$ lines contains two integers $x$, $y$ and a bracket symbol $b$ ($1 \leq x, y \leq n$), which describe one graph edge.
+
+\heading{Output}
+
+Output a single line containing a single integer -- the length of the shortest valid path between $s$ and $t$. You may assume that the answer fits into signed 64-bit integer type (\texttt{long long} in C++).
+
+\heading{Samples}
+
+
+\sampleIN
+
+\sampleOUT
+\sampleCOMMENT
+\sampleEND
+
+
+
+\end{document}
