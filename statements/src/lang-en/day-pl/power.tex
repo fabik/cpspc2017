@@ -1,0 +1,48 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Power plants}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{template}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+In distant future, humanity found a large, warm and lush planet to colonize, and is building a lot of power plants to support the new colony. The stunning technology allows the builders to harness the vast energy of the Universe. However, there is a small fact they overlooked: building two power plants too close to each other yields a considerable risk of a chain reaction, which would in turn lead to a spectacular explosion. This, obviously, should be avoided.
+
+Fortunately, there are two types of energy that can be used in plants, called \textit{light} and \textit{dark} energy -- which do not interact with each other. If some of the power plants work on light, and some on dark energy, the distance between identical plants may be larger than before, which would make the whole undertaking less hazardous.
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+\heading{Task}
+
+Given the locations of $n$ plants (the planet is big enough so that we can treat them as points on a plane), assign to every plant either light or dark energy so that the Euclidean distance between two same-type plants is maximal possible. To avoid real numbers output, as the answer, only the square of this maximal distance.
+
+\heading{Input}
+
+On the first line of input there is a single integer $N$ ($3 \leq N \leq 200\,000$) -- the number of plants.
+Each of the following $N$ lines contains two integers $x$, $y$ ($0 \leq x, y \leq 10^9$) -- the coordinates of the plants.
+
+\heading{Output}
+
+Output a single line containing a single integer -- the maximal distance which can be achieved.
+
+\heading{Samples}
+
+
+\sampleIN
+4
+0 3
+0 0
+3 0
+3 3
+\sampleOUT
+18
+\sampleCOMMENT
+\sampleEND
+
+
+
+\end{document}
