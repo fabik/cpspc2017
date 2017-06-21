@@ -10,8 +10,10 @@ Day CZ
 
 Day PL
 ------
-
-
+  * **gcds** - (number theory, greedy) given a set A of n numbers, for every k = 1, 2,..., n split A into k subsets to maximize the sum of gcd's of all the subsets
+  * **power** - (geometry, graphs) colour a given set of points on the plane with two colours, maximizing the distance of the closest points of the same colour
+  * **brackets** - (graphs, paths) in a graph having edges labeled with brackets (){}[] find a shortest path between two given vertices, which is a valid bracket expression
+  
 Day SK
 ------
 
@@ -20,3 +22,4 @@ Day MIX
 -------
 
   * **secret** - (graph) determine whether a path between two given points exists in a compressed image (we will probably replace this task with another one)
+  * **descendants** - (trees) for two trees built on the same set of vertices, for every vertex determine the number of other vertices that are its descendants in both trees

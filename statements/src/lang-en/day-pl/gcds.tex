@@ -1,0 +1,42 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Brackets}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{template}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+\heading{Task}
+
+You are given a set of $n$ integers. We split this set into $k$ disjoint subsets, for every subset compute the greatest common divisor of its elements, and sum all the subsets' GCDs.
+
+For every $k = 1, 2, \ldots, n$ determine the maximal sum which can be obtained this way.
+
+\heading{Input}
+
+In the first line of input there is a single integer $n$ ($2 \leq n \leq 200\,000$) -- the cardinality of the set. In the second line, there are $n$ pairwise distinct positive integers, not exceeding $10^{18}$.
+
+\heading{Output}
+
+Output a single line containing $n$ integers -- the best sum of GCDs when partitioning into $1$, $2$, \ldots, $n$ subsets.
+
+\heading{Samples}
+
+
+\sampleIN
+
+\sampleOUT
+\sampleCOMMENT
+\sampleEND
+
+
+
+\end{document}
