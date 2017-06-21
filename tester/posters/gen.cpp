@@ -282,21 +282,27 @@ int main () {
         else mod = 0;
         ll prodmod = (mod * (lastres % MOD)) % MOD;
 
+        do {
+            if (x1 > x2) swap(x1, x2);
+            if (y1 > y2) swap(y1, y2);
+
+            ll startx = (--(roots.upper_bound(x1)))->first;
+            ll endx = (--(roots.upper_bound(x2)))->first;
+            pii left = fetch(roots[startx], y1, y2, 0, 0);
+            pii right = fetch(roots[endx], y1, y2, 0, 0);
+
+            ll leftres = x1 * left.second + left.first;
+            ll rightres = x2 * right.second + right.first;
+            lastres = rightres - leftres;
+            if (lastres == 0) {
+                x1 = myrand() % (r + 1); y1 = myrand() % (c + 1); x2 = myrand() % (r + 1); y2 = myrand() % (c + 1);
+            }
+        } while (lastres == 0 && onlinemode == "online");
+
         ll x1_ = (x1 - prodmod + MOD) % MOD, y1_ = (y1 - prodmod + MOD) % MOD, x2_ = (x2 - prodmod + MOD) % MOD, y2_ = (y2 - prodmod + MOD) % MOD;
 
         printf("%lld %lld %lld %lld %lld\n", x1_, y1_, x2_, y2_, mod);
         
-        if (x1 > x2) swap(x1, x2);
-        if (y1 > y2) swap(y1, y2);
-
-        ll startx = (--(roots.upper_bound(x1)))->first;
-        ll endx = (--(roots.upper_bound(x2)))->first;
-        pii left = fetch(roots[startx], y1, y2, 0, 0);
-        pii right = fetch(roots[endx], y1, y2, 0, 0);
-
-        ll leftres = x1 * left.second + left.first;
-        ll rightres = x2 * right.second + right.first;
-        lastres = rightres - leftres;
     }
 
     for(auto ptr : nodes) delete ptr;
