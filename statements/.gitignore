@@ -2,3 +2,4 @@ build
 *.pdf
 *.aux
 *.log
+!img/*.pdf
