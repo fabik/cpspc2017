@@ -56,6 +56,8 @@ For each query output one line containing a single number: Answer to the query.
 
 There are several subtasks. In offline subtasks, the value $v$ will be zero for each query. 
 
+\bigskip
+
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
@@ -72,10 +74,41 @@ subtask & points & maximum $r$  & maximum $c$   & online    \\ \hline
 
 
 \sampleIN
+8 11 3 4 13
+1 1 5 5
+7 7 5 4
+4 6 2 7
+1 1 7 8 0
+2 2 4 3 0
+3 4 6 7 0
+2 9 3 10 0
 \sampleOUT
+24
+2
+6
+0
 \sampleCOMMENT
+You can view the whole plane below.
 \sampleEND
 \center{
-%TODO: \includegraphics[width=12cm]{img/posters.pdf}
+\includegraphics[width=12cm]{img/posters.pdf}
 }
+
+\sampleIN
+8 11 3 4 13
+1 1 5 5
+7 7 5 4
+4 6 2 7
+1 1 7 8 4
+6 6 8 7 2
+2 3 5 6 7
+11 5 12 6 5
+\sampleOUT
+24
+2
+6
+0
+\sampleCOMMENT
+This is the same input as above, using online queries.
+\sampleEND
 \end{document}
