@@ -1,0 +1,14 @@
+random 20
+fail 20
+
+random 10000
+fail 10000
+repet 10000
+
+random 200000
+fail 200000
+repet 200000
+
+random 500000
+fail 500000
+repet 500000
