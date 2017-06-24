@@ -23,6 +23,6 @@ Day SK
 Day MIX
 -------
 
-  * **secret** - (graph) determine whether a path between two given points exists in a compressed image (we will probably replace this task with another one)
+  * **secret** - (graph, divide and conquer) determine whether a path between two given points exists in a compressed image
   * **descendants** - (trees) for two trees built on the same set of vertices, for every vertex determine the number of other vertices that are its descendants in both trees
   * **skiing(svk)** - (geometry) for N parallel line segments and points A, B, find shortest polygonal chain from A to B intersecting all segments in given order
