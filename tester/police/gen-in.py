@@ -76,6 +76,27 @@ def gen_cycle_with_path_and_cycle(max_n, max_m):
 
   return (n, m, edges)
 
+def get_path_of_cycles(max_n, max_m):
+  n = min(max_n, max_m * 2 / 3)
+  if n % 2 == 0:
+    n -= 1
+  k = n / 2
+  m = k * 3 - 1
+
+  edges = set()
+  for i in xrange(0, k):
+    u = i * 2
+    v = i * 2 + 1
+    w = i * 2 + 2
+
+    edges.add((u, v))
+    edges.add((v, w))
+
+    if i != k / 2:
+      edges.add((w, u))
+
+  return (n, m, edges)
+
 def get_trivial_cases():
   return [
     (2, 1, [(0, 1)]),
@@ -134,7 +155,8 @@ for set_number, min_n, max_n, min_m, max_m in set_parameters:
     gen_random(min_n, max_n, min_m, max_m, 3),
     gen_cycle_with_star(max_n, max_m),
     gen_cycle_with_path(max_n, max_m),
-    gen_cycle_with_path_and_cycle(max_n, max_m)
+    gen_cycle_with_path_and_cycle(max_n, max_m),
+    get_path_of_cycles(max_n, max_m)
   ]
   set_data.extend(get_trivial_cases())
   write_tests(set_number, set_data)
