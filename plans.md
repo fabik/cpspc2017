@@ -17,7 +17,7 @@ Day PL
 Day SK
 ------
   * **posters** - (geometry, sweepline) for set S of disjoint rectangles, compute intersection areas of S with query rectangles
-  * **counterspells** - (trees, heavy-light decompositoin) we build a tree vertex-by-vertex, keeping it colored in a specific way. After each node addition, compute number of vertices that need to change color
+  * **counterspells** - (trees, heavy-light decomposition) we build a tree vertex-by-vertex, keeping it colored in a specific way. After each node addition, compute number of vertices that need to change color
   * **name-to-be-decided** - (strings) you are given a string S of form ABC, where C and A differ in exactly one character. Find all possible lengths of AB
 
 Day MIX
