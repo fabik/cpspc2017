@@ -53,7 +53,6 @@ int main() {
 			empty[i][j] = s[j] == '.';
 		}
 	}
-	vector<int> remain(q);
 	for (int i = 0; i < q; i++) {
 		int sr, sc, tr, tc;
 		cin >> sr >> sc >> tr >> tc;

@@ -8,55 +8,77 @@
 % leave this values, if you are not interested
 \info{robot}{stdin}{stdout}{100}{2000 ms}{1 GB}
 
-V Bytelandii se budou konat závody robotů na bludišti. Bludiště má tvar obdélníku a je rozděleno na $n \times m$ polí uspořádaných do $n$ řádků a $m$ sloupců. Každé z polí je buď prázdné, nebo je na něm překážka.
+V Bytelandii se budou konat závody robotů na bludišti. Půdorys bludiště má tvar
+obdélníku a je rozdělen na $n \times m$ polí uspořádaných do $n$ řádků a $m$
+sloupců. Každé z polí je buď prázdné, nebo je na něm překážka.
 
-Soutěžící do soutěže přihlásí své roboty a poté jeden do druhém přistupují k bludišti. Zde si vylosují souřadnice počátečního a cílového pole. Následně umístí svého robota na počáteční pole a robot se musí posloupností kroků dostat na cílové pole.
+Soutěžící do soutěže přihlásí své roboty a poté jeden do druhém přistupují
+k bludišti. Zde si vylosují souřadnice počátečního a cílového pole, umístí svého
+robota na počáteční pole a robot se musí posloupností kroků dostat na cílové
+pole.
 
-Aby to ale nebylo tak jednoduché, tak se podle pravidel může robot v každém kroku v bludišti posunout buď o jedno pole dolů nebo o jedno pole doprava. Jinými směry se pohybovat nesmí.
+Aby to ale neměli tak jednoduché, tak se podle pravidel může robot v každém
+kroku v bludišti posunout buď o jedno pole dolů nebo o jedno pole doprava.
+Jinými směry se pohybovat nesmí.
 
-Vítězem se stane ten soutěžící, jehož robot se dostane z počátečního pole na cílové nejrychleji. Pokud se robot nedokáže ve stanoveném časovém limitu dostat do cíle, tak je soutěžící diskvalifikován.
+Vítězem se stane ten soutěžící, jehož robot se dostane z počátečního pole na
+cílové nejrychleji. Pokud se robot nedokáže ve stanoveném časovém limitu dostat
+do cíle, tak je soutěžící diskvalifikován.
 
-Organizátoři uvědomili, že když si soutěžící vylosuje špatné souřadnice, tak se jeho robot do cíle nemůže žádnou posloupností kroků dostat. V takovém případě by mu chtěli dát možnost vylosovat si nové souřadnice.
+Organizátoři si uvědomili, že když si soutěžící vylosuje špatné souřadnice, tak
+se jeho robot do cíle nemůže žádnou posloupností kroků dostat. V takovém případě
+by mu chtěli dát možnost vylosovat si nové souřadnice.
 
 \heading{Úloha}
 
-Je dána mapa bludiště o velikosti $n \times m$ a $q$ vylosovaných souřadnic počátečního a cílového pole. Zjistěte pro každou dvojici souřadnic, zda se dá z počátečního pole v bludišti dostat do cílového pole nějakou posloupností kroků dolů a doprava.
+Je dána mapa bludiště o velikosti $n \times m$ a $q$ vylosovaných souřadnic
+počátečního a cílového pole. Zjistěte pro každou dvojici souřadnic, zda se dá
+z počátečního pole v bludišti dostat do cílového pole nějakou posloupností kroků
+dolů nebo doprava.
 
 \heading{Vstup}
 
-První řádek vstupu obsahuje celá čísla $n$, $m$ a $q$: počet řádků a sloupců bludiště a počet dvojic souřadnic.
+První řádek vstupu obsahuje celá čísla $n$, $m$ a $q$: počet řádků a sloupců
+bludiště a počet dvojic souřadnic.
 
-Na každém z následujících $n$ řádků je $m$ znaků, které popisují jednotlivá pole bludiště. Znak \texttt{.} značí prázdné pole, znak \texttt{#} značí překážku.
+Na každém z následujících $n$ řádků je $m$ znaků, které popisují jednotlivá pole
+bludiště. Znak \texttt{.} značí prázdné pole, znak \texttt{\#} značí překážku.
 
-Poté následuje $q$ řádků popisujících vylosované souřadnice. Na $i$-tém z nich jsou čtyři celá čísla ${r_1}_i$, ${c_1}_i$, ${r_2}_i$, ${c_2}_i$: řádek a sloupec počátečního pole a řádek a sloupec cílového pole.
+Poté následuje $q$ řádků popisujících vylosované souřadnice. Na $i$-tém z nich
+jsou čtyři celá čísla ${r_1}_i$, ${c_1}_i$, ${r_2}_i$, ${c_2}_i$: řádek a
+sloupec počátečního pole a řádek a sloupec cílového pole.
 
 \bigskip
 \noindent
 Platí, že $1 \leq n,m \leq 1000$ a $1 \leq q \leq 10^6$.\\
-Pro každé $i \in \{ 1, 2, \ldots, q \}$ platí, že $1 \leq {r_1}_i, {r_2}_i \leq n$ a $1 \leq {c_1}_i, {c_2}_i \leq m$.\\
-Pro každé $i \in \{ 1, 2, \ldots, q \}$ jsou pole na souřadnicích $({r_1}_i, {c_1}_i)$ a $({r_2}_i, {c_2}_i)$ prázdná.\\
+Pro každé $i \in \{ 1, 2, \ldots, q \}$ platí, že
+  $1 \leq {r_1}_i, {r_2}_i \leq n$ a $1 \leq {c_1}_i, {c_2}_i \leq m$.\\
+Pro každé $i \in \{ 1, 2, \ldots, q \}$ jsou pole v bludišti na souřadnicích
+  $({r_1}_i, {c_1}_i)$ a $({r_2}_i, {c_2}_i)$ prázdná.\\
 Ve 20 \% vstupů navíc platí, že $q \leq 300$.
 
 \heading{Výstup}
 
-Vypište $q$ řádků. Na $i$-tém z nich vypište slovo \texttt{YES}, pokud se robot může z $i$-tého počátečního pole dostat na $i$-té cílové pole, nebo slovo \texttt{NO}, pokud se na cílové pole dostat nemůže.
+Vypište $q$ řádků. Na $i$-tém z nich vypište slovo \texttt{YES}, pokud se robot
+může z $i$-tého počátečního pole dostat na $i$-té cílové pole, nebo slovo
+\texttt{NO}, pokud se na cílové pole dostat nemůže.
 
 \heading{Příklad}
 
 \sampleIN
 3 4 5
-.#..
-.##.
+.\#..
+.\#\#.
 ....
 1 1 3 4
 1 3 3 4
-2 1 2 3
 1 1 1 1
 1 1 2 4
+2 1 2 4
 \sampleOUT
 YES
 YES
-NO
+YES
 NO
 NO
 \sampleEND
