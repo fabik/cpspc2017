@@ -6,7 +6,7 @@ Day CZ
 
   * **police** - (graph) find vertices in directed graph from which all other vertices can be reached
   * **pyramid** - (binary search, inclusion–exclusion) find k-th lowest number which is divisible by at least one number from a set
-
+  * **race** - (dp, divide and conquer, bitmasks) given a maze, determine for each query whether it is possible to get from field X to field Y using a sequence of steps right or down
 
 Day PL
 ------
