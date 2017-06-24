@@ -24,7 +24,7 @@ def write_test(set_number, test_number, min_nm, max_nm, q, type, empty_percentag
 
 set_parameters = [
   # (set_number, min_nm, max_nm, q)
-  (1, 970, 1000, 1000), # 30 points
+  (1, 970, 1000, 300), # 30 points
   (2, 970, 1000, 10**6) # 70 points
 ]
 
