@@ -1,0 +1,86 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Policajná stanica}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{police}{stdin}{stdout}{100}{2000 ms}{1 GB}
+
+Po nedávnom fiasku a následných protestoch sa polícia rozhodla, že vybuduje
+hyperrýchle hyperdiaľnice. Tak sa budú môcť policajti dostať na každé miesto takmer
+okamžite a budú vedieť predísť tragickým udalostiam.
+
+Vyhlásili sa rýchle tendre, vybudovali sa hyperdiaľnice pochybnej kvality. A to
+najhoršie: Vybudovali sa jednosmerné a úplne bez ladu a skladu.
+
+Vrámci šetrenia chce vláda vybudovať jedinú policajnú základňu so špeciálnym
+vybavením pre cestovanie po hyperdiaľniciach. Z tejto základne musí existovať
+cesta po hyperdiaľniciach do každého mesta.
+
+Spätná cesta po hyperdiaľniciach nemusí existovať. Policajti sa po úspešnom
+zásahu môžu vrátiť na stanicu aj po pomalých medzimestských cestách.
+
+Vládni poradcovia a experti si momentálne lámu hlavu, ale ani za svet nevedia
+nájsť mestá, v ktorých by sa potenciálne mohla základňa vybudovať. Preto požiadali
+o pomoc práve vás!
+
+\heading{Úloha}
+
+Máte zadanú sieť jednosmerných hyperdiaľnic. Nájdite všetky mestá, z ktorých
+sa dá dostať do každého iného mesta iba nejakou postupnosťou diaľnic.
+
+\heading{Vstup}
+
+Prvý riadok vstupu obsahuje dve celé čísla $N$ a $M$: počet miest a počet
+diaľnic.
+
+Ďalej nasleduje $M$ riadkov. Každý z nich obsahuje dve celé čísla $A_i$ a $B_i$:
+čísla miest, ktoré spája $i$-ta diaľnica. Každá diaľnica je jednosmerná a vedie
+z mesta $A_i$ do mesta $B_i$.
+
+\bigskip
+\noindent
+Platí, že $1 \leq N, M \leq 10^6$.\
+Pre každé $i$ platí, že $1 \leq A_i, B_i \leq N$ a $A_i \neq B_i$.\\
+Žiadne dve diaľnice nespájajú tie isté mestá tým istým smerom. Môžu však
+spájať dve mestá v opačných smeroch. \\
+V 30 \% vstupov navyše platí $N \leq 10^3$ a $M \leq 3 \cdot 10^3$.
+
+\heading{Výstup}
+
+Na výstupu musí být právě dva řádky. Na prvním řádku musí být celkový počet
+planet, ze kterých se dá dostat na všechny ostatní planety v galaxii. Na druhém
+řádku musí být mezerou oddělená čísla těchto planet. Čísla planet musí být
+uspořádána vzestupně.
+
+Vypíšte práve dva riadky. V prvom riadku má byť celkový počet miest, z ktorých
+sa dá dostať do každého iného mesta. V druhom riadku majú byť medzerami oddelené
+čísla týchto miest. \textbf{Čísla miest musia byť usporiadané vzostupne!}
+
+\heading{Příklady}
+
+\sampleIN
+5 6
+1 3
+1 4
+4 2
+2 1
+2 5
+5 4
+\sampleOUT
+4
+1 2 4 5
+\sampleEND
+
+\sampleIN
+3 2
+1 3
+2 3
+\sampleOUT
+0
+~
+\sampleEND
+
+\end{document}
