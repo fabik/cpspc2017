@@ -1,0 +1,74 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Pyramída}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{pyramid}{stdin}{stdout}{100}{2000 ms}{1 GB}
+
+Archeológom sa podaril veľmi dôležitý objav. Vnútri pyramídy objavili novú,
+skrytú a doteraz nepreskúmanú komnatu. Na každom stĺpe je napísané jedno
+posvätné číslo. Navyše sa z hieroglyfov dozvedeli, že aj všetky čísla, ktoré
+sú deliteľné aspoň jedným číslom zo stĺpov, sú tiež posvätné.
+
+Na $M$ stenách po miestnosti našli mnohé odkazy na tieto posvätné čísla. Šípiac
+skrytú symboliku, alebo tajnú správu, radi by tieto čísla zistili. Bohužiaľ, nie
+je to také jednoduché. Samotné čísla totiž nie sú uvedené, vždy sa len spomína,
+koľké posvätné číslo to je. Pomôžte im rozriešiť túto záhadu!
+
+\heading{Úloha}
+
+Zadaných je $N$ kladných čísel $A_1, A_2, \ldots, A_N$ a $M$ kladných celých čísel
+$Q_1, Q_2, \ldots Q_M$. Pre každé $i$ nájdite $Q_i$-te najmenšie číslo spomedzi
+takých čísel, ktoré sú deliteľné aspoň jedným z čísel $A_1$ až $A_N$.
+
+\heading{Vstup}
+
+Prvý riadok vstupu obsahuje dve celé čísla, $N$ a $M$. Druhý riadok obsahuje
+medzerou oddelené čísla $A_1$ až $A_N$. Ďalej nasleduje $M$ riadkov, každý z nich
+obsahuje číslo $Q_i$.
+
+\bigskip
+\noindent
+Platí, že $1 \leq N \leq 15$ a $1 \leq M \leq 50$.\\
+Pre každé $i \in \{ 1, 2, \ldots, N \}$ platí, že $2 \leq A_i \leq 10^{18}$.\\
+Pre súčin týchto čísel platí, že $A_1 \cdot A_2 \cdot \ldots \cdot A_N \leq 10^{18}$.\\
+Pro každé $i \in \{ 1, 2, \ldots, M \}$ platí, že $1 \leq Q_i \leq 10^{18}$.\\
+Každé číslo na výstupe bude menšie alebo rovné $10^{18}$.\\
+V 10 \% vstupov navyše platí, že $Q_1, Q_2, \ldots, Q_M \leq 10^6$.\\
+V 30 \% vstupov navyše platí, že $N \leq 2$.
+
+\heading{Výstup}
+
+Vypíšte $M$ riadkov, na $i$-tom z nich $Q_i$-te najmenšie číslo spomedzi
+čísel deliteľných aspoň jedným z čísel $A_1$ až $A_N$.
+
+\heading{Príklad}
+
+\sampleIN
+5 5
+2 5 7 10 11
+1
+2
+3
+10
+20
+\sampleOUT
+2
+4
+5
+14
+28
+\sampleEND
+
+\sampleIN
+2 1
+70 100
+5
+\sampleOUT
+210
+\sampleEND
+
+\end{document}
