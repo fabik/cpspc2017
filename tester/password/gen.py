@@ -27,7 +27,17 @@ def fail(n):
     s = ''.join([random.choice(string.ascii_lowercase) for i in range(n)])
     return s + s[0]
 
-convert = {"random":randomrep, "repet":hyperrep_end, "fail":fail}
+def sandwich(n, ratio):
+    ch = random.choice(string.ascii_lowercase)
+    return ch*(int(n*ratio)) + ''.join([random.choice(string.ascii_lowercase) for i in range(n - 2*int(n * ratio))]) + ch * int(n*ratio)
+
+def sandfail(n):
+    return sandwich(n, 0.42)
+
+def sandok(n):
+    return sandwich(n - 1, 0.3) + random.choice(string.ascii_lowercase)
+
+convert = {"random":randomrep, "repet":hyperrep_end, "fail":fail, "sandfail":sandfail, "sandok":sandok}
 args = input().split()
 
 s = convert[args[0]](int(args[1]))
