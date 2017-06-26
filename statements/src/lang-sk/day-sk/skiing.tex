@@ -22,14 +22,14 @@ ináč svoju prehru zvalí na vás.
 
 \heading{Úloha}
 
-Súťažná trať pozostáva z počiatočného bodu $S$, koncového bodu $F$ a $n$ bránok.
+Súťažná trať pozostáva z počiatočného bodu $S$, koncového bodu $F$ a $n$ bránok.
 Každá bránka je úsečka rovnobežná s osou $x$ (čiže horizontálna). Žiadne dve bránky
-nie sú na tej istej $y$-ovej súradnici (v tej istej výške). Začiatočný bod $S$ sa
+nie sú na tej istej $y$-ovej súradnici (v tej istej výške). Začiatočný bod $S$ sa
 nachádza nad každou z bránok, čiže jeho $y$-ová súradnica je väčšia ako $y$-ová
-súradnica ktorejkoľvek z bránok. Koncový bod $F$ sa nachádza pod všetkými bránkami a 
+súradnica ktorejkoľvek z bránok. Koncový bod $F$ sa nachádza pod všetkými bránkami a 
 pod štartovacím bodom.
 
-Nájdite najkratšiu lomenú čiaru začínajúcu v bode $S$, končiacu v bode $F$ a prechádzajúcu
+Nájdite najkratšiu lomenú čiaru začínajúcu v bode $S$, končiacu v bode $F$ a prechádzajúcu
 cez všetky bránky v poradí \textbf{zhora nadol}. Lomená čiara prechádza bránkou práve vtedy,
 keď majú aspoň jeden spoločný bod. Tento bod \textbf{môže} byť aj krajným bodom bránky.
 
@@ -39,8 +39,8 @@ Prvý riadok vstupu obsahuje číslo $n$ ($0 \leq n \leq 10^6$) -- počet bráno
 Druhý riadok obsahuje štyri čísla, $x_S, y_S, x_F, y_F$: súradnice bodov $S = (x_S, y_S)$
 a $F = (x_F, y_F)$.
 
-Nasleduje $n$ riadkov, $i$-ty z nich obsahuje tri čísla ${x_1}_i, {x_2}_i, {y}_i$ popisujúce $i$-tu
-bránu ako úsečku z bodu $({x_1}_i, y_i)$ do bodu $({x_2}_i, y_i)$. Pre každé $i$ platí nerovnosť
+Nasleduje $n$ riadkov, $i$-ty z nich obsahuje tri čísla ${x_1}_i, {x_2}_i, {y}_i$ popisujúce $i$-tu
+bránu ako úsečku z bodu $({x_1}_i, y_i)$ do bodu $({x_2}_i, y_i)$. Pre každé $i$ platí nerovnosť
 ${x_1}_i < {x_2}_i$.
 
 Všetky súradnice sú celé čísla medzi $-10^9$ a $10^9$ vrátane. Bránky sú usporiadané zhora
@@ -49,7 +49,7 @@ nadol, čiže $y_S > y_1 > y_2 > \dots > y_n > y_F$.
 \heading{Výstup}
 
 Dá sa dokázať, že existuje jednoznačná najkratšia lomená čiara spĺňajúca zadanie a vrcholy tejto
-čiary majú celočíselné súradnice. Vypíšte lomenú čiaru ako postupnosť vrcholov, v ktorých sa
+čiary majú celočíselné súradnice. Vypíšte túto lomenú čiaru ako postupnosť vrcholov, v ktorých sa
 mení jej smer (nevypisujte zbytočné vrcholy).
 
 \begin{center}
