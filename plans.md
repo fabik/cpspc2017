@@ -16,13 +16,14 @@ Day PL
   
 Day SK
 ------
-  * **posters** - (geometry, sweepline) for set S of disjoint rectangles, compute intersection areas of S with query rectangles
+
+* * **skiing(svk)** - (geometry) for N parallel line segments and points A, B, find shortest polygonal chain from A to B intersecting all segments in given order
   * **counterspells** - (trees, heavy-light decomposition) we build a tree vertex-by-vertex, keeping it colored in a specific way. After each node addition, compute number of vertices that need to change color
-  * **name-to-be-decided** - (strings) you are given a string S of form ABC, where C and A differ in exactly one character. Find all possible lengths of AB
+  * **password** - (strings) you are given a string S of form ABC, where C and A differ in exactly one character. Find all possible lengths of AB
 
 Day MIX
 -------
 
   * **secret** - (graph, divide and conquer) determine whether a path between two given points exists in a compressed image
   * **descendants** - (trees) for two trees built on the same set of vertices, for every vertex determine the number of other vertices that are its descendants in both trees
-  * **skiing(svk)** - (geometry) for N parallel line segments and points A, B, find shortest polygonal chain from A to B intersecting all segments in given order
+  * **posters** - (geometry, sweepline) for set S of disjoint rectangles, compute intersection areas of S with query rectangles
