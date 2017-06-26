@@ -24,7 +24,7 @@ def hyperrep_end(n):
     return s[:pos] + random.choice(string.ascii_lowercase) + s [pos+1:]
 
 def fail(n):
-    s = ''.join([random.choice(string.ascii_lowercase) for i in range(n)])
+    s = ''.join([random.choice(string.ascii_lowercase) for i in range(n-1)])
     return s + s[0]
 
 def sandwich(n, ratio):
