@@ -16,7 +16,10 @@ int main () {
     for (int i = (n+1)/2; i < n; i++) {
         int ch = 0;
         For(j, n - i) {
-            if (s [j] != s [i+j]) ch++;
+            if (s [j] != s [i+j]) {
+                ch++;
+                if (ch > 1) break;
+            }
         }
         if (ch == 1) {
             cout << i << endl;

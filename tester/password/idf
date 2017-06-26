@@ -1,19 +1,20 @@
 random 20
 fail 20
+sandfail 20
+sandok 20
 
 random 5000
 fail 5000
 repet 5000
 sandfail 5000
+sandok 5000
+abab 5000
 
-random 200000
-fail 200000
-repet 200000
-sandfail 200000
-sandok 200000
-
+random 500000
 random 500000
 fail 500000
 repet 500000
 sandfail 500000
 sandok 500000
+abab 500000
+abab 500000
