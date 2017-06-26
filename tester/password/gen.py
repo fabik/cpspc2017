@@ -37,7 +37,17 @@ def sandfail(n):
 def sandok(n):
     return sandwich(n - 1, 0.3) + random.choice(string.ascii_lowercase)
 
-convert = {"random":randomrep, "repet":hyperrep_end, "fail":fail, "sandfail":sandfail, "sandok":sandok}
+def abab(n):
+    n = n - 3
+    a = random.choice(string.ascii_lowercase)
+    b = random.choice(string.ascii_lowercase)
+    while (b == a):
+        b = random.choice(string.ascii_lowercase)
+
+    reps = random.randint(n // 3, n // 2)
+    return (a+b)*reps  + a + random.choice(string.ascii_lowercase) +b + (a+b)*(n//2 - reps)
+
+convert = {"random":randomrep, "repet":hyperrep_end, "fail":fail, "sandfail":sandfail, "sandok":sandok, "abab":abab}
 args = input().split()
 
 s = convert[args[0]](int(args[1]))
