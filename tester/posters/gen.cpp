@@ -196,11 +196,11 @@ vector<ll> quadrants(ll n) {
 int main () {
 
     def_node = new node(-1000, -1000, nullptr, nullptr);
-    srand(time(NULL) + getpid());
 
     string mode, onlinemode;
-    ll MOD;
-    cin >> mode >> onlinemode >> r >> c >> n >> q >> MOD;
+    ll MOD, seed;
+    cin >> mode >> onlinemode >> r >> c >> n >> q >> MOD >> seed;
+    srand(seed);
     decompress = {0, 1023456789};
     vector <ll> rects;
     
