@@ -19,10 +19,11 @@
 A bracket symbol is one of the following: \texttt{()[]\{\}<>}. A correct \textit{bracket expression} is any string consisting of bracket symbols, such that:
 \begin{itemize}
  \item Every left bracket has a matching right bracket of the same kind, and every right bracket is matched;
- \item No two pairs of matching brackets cross -- for every two such pairs, they are either one is always contained inside the other.
+ \item No two pairs of matching brackets cross -- for every two such pairs, they are either disjoint or one is contained inside the other.
 \end{itemize}
+For example, \texttt{([])<>} is a correct bracket expression, whereas \texttt{<\{>\}} is not, as the curly brackets and angle brackets cross each other.
 
-You are given a graph of $n$ vertices in which every (directed) edge is labeled with one of the bracket symbols. A path in this graph is \textit{valid}, if its edges form a correct bracket expression. For some two vertices $s$ and $t$, determine the length of a shortest valid path between $s$ and $t$.
+You are given a graph of $n$ vertices in which every (directed) edge is labeled with one of the bracket symbols. A path in this graph is \textit{valid}, if its edges form a correct bracket expression. For some two vertices $s$ and $t$, determine the length of a shortest valid path between $s$ and $t$. We allow the path to pass multiple times through any vertex.
 
 
 \heading{Input}
@@ -69,9 +70,9 @@ Output a single line containing a single integer -- the length of the shortest v
 \sampleIN
 5 4 1 5
 1 2 <
-2 3 {
+2 3 \{
 3 4 >
-4 5 }
+4 5 \}
 \sampleOUT
 -1
 
