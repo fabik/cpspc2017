@@ -1,0 +1,71 @@
+\input sys/inputs.tex
+\usepackage[slovak]{babel}
+\begin{document}
+
+\bigheading{Elektrárne}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{power}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+V ďalekej budúcnosti ľudstvo našlo veľkú, pohostinnú planétu a začalo ju kolonizovať. Momentálne inžinieri stavajú
+hromadu elektrární, ktoré budú novej kolónii dodávať (prekvapivo) elektrinu. Vďaka skvelej novej
+technológii dokážu elektrárne produkovať elektrinu z Vesmírnej Energie. 
+
+Inžinieri však zabudli na jeden detail: ak postavíte dve elektrárne príliš blízko pri sebe, vzniká veľké riziko reťazovej reakcie, čo by v prípade havárie mohlo viesť k magnificentnej explózii. Tomuto sa, samozrejme, treba vyhnúť.
+
+Našťastie existujú dva druhy Vesmírnej Energie, ktoré sa dajú používať v elektrárňach: \textit{ľahká}
+a \textit{tmavá}. Tieto dva druhy spolu neinteragujú, takže ak susedné elektrárne používajú rôzne druhy
+energie, reťazová reakcia tam nehrozí.
+
+\heading{Úloha}
+
+Dostanete pozície $n$ elektrární (planéta je obrovská, takže elektrárne si môžeme predstaviť ako body v rovine). Každej elektrárni určite, aký druh Energie má používať, aby Euklidovská vzdialenosť medzi
+dvoma najbližšími elektrárňami rovnakého typu bola čo najväčšia.
+
+\heading{Vstup}
+
+V prvom riadku vstupu je jedno celé číslo $N$ ($3 \leq N \leq 100\,000$) -- počet elektrární.
+Nasleduje $N$ riadkov, $i$-ty z nich obsahuje dve celé čísla $x_i$, $y_i$ ($0 \leq x_i, y_i \leq 10^9$) -- súradnice $i$-tej elektrárne. Všetky body sú rôzne.
+
+\heading{Výstup}
+
+Na prvý riadok vypíšte jedno celé číslo -- štvorec maximálnej dosiahnuteľnej vzdialenosti medzi najbližšími elektrárňami rovnakého typu.
+Na druhý riadok vypíšte počet elektrární používajúcich ľahkú Energiu a na tretí riadok vypíšte zoznam
+ich čísel, oddelených medzerami (elektrárne sú číslované od $1$).
+Na štvrtý a piaty riadok vypíšte rovnakým spôsobom popis elektrární na tmavú Energiu. Ak existuje viac
+riešení, vypíšte ľubovoľné z nich.
+
+\heading{Podúlohy}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Podúloha & Body & Maximálne $n$  \\ \hline
+1       & 10     & 100           \\ \hline
+2       & 25     & 2000         \\ \hline
+3       & 65     & 100\,000       \\ \hline
+\end{tabular}
+\end{center}
+
+\heading{Príklady}
+
+
+\sampleIN
+4
+0 3
+0 0
+3 0
+3 3
+\sampleOUT
+18
+2
+1 3
+2
+2 4
+\sampleCOMMENT
+\sampleEND
+
+
+
+\end{document}
