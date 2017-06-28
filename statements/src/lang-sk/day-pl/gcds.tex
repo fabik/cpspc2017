@@ -1,0 +1,83 @@
+\input sys/inputs.tex
+\usepackage[slovak]{babel}
+
+\begin{document}
+
+\bigheading{Súčet spoločných deliteľov}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{template}{stdin}{stdout}{100}{? ms}{1 GB}
+
+Usáma máva po večeroch flešbeky do dávnej minulosti, keď času bolo ešte dosť, najmä
+na počítanie rôznych prasačiniek. Jednej z jeho príjemných spomienok na zoznamovanie
+sa s teóriou čísel sa teraz budete venovať.
+
+\heading{Úloha}
+
+Dostanete multimnožinu $n$ prirodzených čísel. Tieto čísla budeme deliť do $k$ skupín,
+v každej spočítame najväčšieho spoločného deliteľa a tieto delitele sčítame.
+
+Pre každé $k$ od $1$ po $n$ spočítajte, aký najväčší súčet môžeme takto dostať.
+
+\heading{Vstup}
+
+V prvom riadku vstupu dostanete číslo $n$ ($1 \leq n \leq 500\,000$), počet čísel. V
+druhom riadku dostanete $n$ prirodzených čísel $a_1, \ldots, a_n$ oddelených medzerami.
+Platí $1 \leq a_i \leq 10^{12}$.
+
+\heading{Výstup}
+
+Vypíšte $n$ riadkov, každý obsahujúc jedno číslo -- najväčšie možné súčty
+najmenších spoločných deliteľov pri delení do $1$, $2$, \ldots, $n$ skupín (v tomto poradí).
+
+\heading{Podúlohy}
+
+\begin{center}
+  \begin{tabular}{|c|p{8cm}|c|}
+    \hline
+    \textbf{Podúloha} & \textbf{Obmedzenia} & \textbf{Body} \\ \hline
+    1 & $n \leq 7$ & 5 \\ \hline
+    2 & $n \leq 15$ & 5 \\ \hline
+    3 & $n \leq 100$, $a_i \leq 500$ & 8 \\ \hline
+    4 & $n \leq 2000$, $a_i \leq 2000$, hodnoty $a_i$ sú rôzne & 8 \\ \hline
+    5 & $n \leq 2000$ & 14 \\ \hline
+    6 & Hodnoty $a_i$ sú rôzne & 25 \\ \hline
+    7 & Bez špeciálnych obmedzení & 35 \\ \hline
+  \end{tabular}
+\end{center}
+
+\heading{Príklad}
+\sampleIN
+4
+10 9 10 3
+\sampleOUT
+1
+13
+23
+32
+
+\sampleEND
+
+\noindent \textit{Pre $k = 2$, najlepšie rozdelenie je do skupín $(10,10)$ a $(9,3)$ so súčtom $10+3 = 13$. Pre $k=3$, najlepšie rozdelenie je $(10)$, $(10)$ a $(9,3)$ so súčtom $23$.}
+
+\medskip
+
+\sampleIN
+8
+15 25 29 30 43 44 45 55
+\sampleOUT
+1
+56
+101
+145
+188
+221
+256
+286
+
+\sampleEND
+
+
+
+\end{document}
