@@ -1,0 +1,89 @@
+\input sys/inputs.tex
+\usepackage[slovak]{babel}
+\begin{document}
+
+\bigheading{Zátvorky}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{brackets}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+Paulínka išla na CPSPC a tam dostala nasledujúcu úlohu:
+
+\heading{Úloha}
+
+Za \emph{zátvorky} v tejto úlohe považujeme nasledujúce znaky: \texttt{()[]\{\}<>}. Korektná \emph{zátvorková postupnosť} je každý reťazec pozostávajúci zo zátvoriek, v ktorom:
+\begin{itemize}
+ \item Každú ľavú zátvorku zatvára nejaká pravá zátvorka rovnakého typu a každá pravá zátvorka zatvára práve jednu ľavú zátvorku.
+ \item Žiadne dve dvojice prislúchajúcich zátvoriek sa "nekrižujú" -- buď sú za sebou, alebo je jedna vnútri druhej.
+\end{itemize}
+Napríklad, \texttt{([])<>} je korektná zátvorková posupnosť, ale \texttt{<\{>\}} nie je, keďže huňaté a zobákové zátvorky sa križujú.
+
+Z neba nám spadol orientovaný graf s $n$ vrcholmi, v ktorom je každá hrana označená jednou zátvorkou. Sled \footnote{cesta, v ktorej sa môžu vrcholy aj hrany opakovať} v tomto grafe nazývame \emph{platný}, ak
+označenia jeho hrán tvoria korektnú zátvorkovú postupnosť. Pre vrcholy $s$ a $t$ (ktoré nám tiež spadli
+z neba) nájdite najkratší platný sled z $s$ do $t$.
+
+\heading{Vstup}
+
+Na prvom riadku vstupu sú 4 celé čísla $n, m, s, t$ ($1 \leq n \leq 200$, $0 \leq m \leq 2000$, $1 \leq s, t \leq n$) -- počet vrcholov grafu, počet hrán grafu, číslo štartovacieho vrcholu $s$ a číslo cieľového vrcholu $t$. Vrcholy sú očíslované $1, 2, \dots, n$.
+
+Každý z nasledujúcich $m$ riadkov obsahuje dve celé čísla $x, y$ a zátvorku $b$ ($1 \leq x, y \leq n$), ktoré popisujú hranu z $x$ do $y$ označenú zátvorkou $b$. V grafe \textbf{môžu} byť slučky a násobné hrany.
+
+\heading{Výstup}
+
+Vypíšte jediný riadok obsahujúci jedno celé číslo -- dĺžku najkratšieho platného sledu z $s$ do $t$. Ak
+takýto sled neexistuje, vypíšte $-1$. Môžete predpokladať, že ak platný sled existuje, jeho dĺžka neprekročí $10^{18}$.
+
+\heading{Podúlohy}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+	\hline
+	Podúloha & Body  & Popis \\
+	\hline
+	1 & 16 & $n \leq 10, m\leq 50$ \\
+	\hline
+	2 & 16 & $n \leq 20, m\leq 100$\\
+	\hline
+	3 & 16 & $n \leq 50$\\
+	\hline
+	4 & 16 & $n \leq 100$ \\
+	\hline
+	5  & 10 & $s = 1$, $t = n$, $a < b$ pre každú hranu $(a,b)$\\
+	\hline
+	6 & 26  & bez ďalších obmedzení \\
+	\hline
+\end{tabular}
+\end{center}
+\heading{Príklady}
+
+
+\sampleIN
+4 4 1 4
+1 2 (
+2 2 [
+2 3 ]
+3 4 )
+\sampleOUT
+4
+\sampleEND
+\sampleIN
+5 4 1 5
+1 2 <
+2 3 \{
+3 4 >
+4 5 \}
+\sampleOUT
+-1
+
+\sampleEND
+
+
+
+\end{document}
