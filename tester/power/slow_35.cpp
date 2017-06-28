@@ -1,4 +1,4 @@
-// Slow solution, but fits in memory, 40/100
+// Slow solution, but fits in memory, 35/100
 
 #include <cstdio>
 #include <algorithm>
