@@ -16,25 +16,63 @@
 
 \heading{Task}
 
-You are given a set of $n$ integers. We split this set into $k$ disjoint subsets, for every subset compute the greatest common divisor of its elements, and sum all the subsets' GCDs.
+A multi-set (i.e. a set with possible repetitions) of $n$ integers is given. We split the set into $k$ disjoint groups, for every group we compute the greatest common divisor of its elements, and sum all the subsets' GCDs.
 
-For every $k = 1, 2, \ldots, n$ determine the maximal sum which can be obtained this way.
+For every $k = 1, 2, \ldots, n$, determine the maximal sum which can be obtained this way.
 
 \heading{Input}
 
-In the first line of input there is a single integer $n$ ($2 \leq n \leq 200\,000$) -- the cardinality of the set. In the second line, there are $n$ pairwise distinct positive integers, not exceeding $10^{18}$.
+In the first line of input there is a single integer $n$ ($1 \leq n \leq 500\,000$) -- the cardinality of the set. In the second line, there are $n$ positive integers, not exceeding $10^{18}$ -- the given sequence.
 
 \heading{Output}
 
-Output a single line containing $n$ integers -- the best sum of GCDs when partitioning into $1$, $2$, \ldots, $n$ subsets.
+Output $n$ line scontaining one integer each -- the best sum of GCDs when partitioning into $1$, $2$, \ldots, $n$ subsets.
+
+\heading{Subtasks}
+
+\begin{center}
+  \begin{tabular}{|c|p{8cm}|c|}
+    \hline
+    \textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\ \hline
+    1 & $n \leq 7$ & 5 \\ \hline
+    2 & $n \leq 15$ & 5 \\ \hline
+    3 & $n \leq 100$, $a_i \leq 500$ & 8 \\ \hline
+    4 & $n \leq 2000$, $a_i \leq 2000$, $a_i$ are distinct & 8 \\ \hline
+    5 & $n \leq 2000$ & 14 \\ \hline
+    6 & $a_i$ are distinct & 25 \\ \hline
+    7 & no additional constraints & 35 \\ \hline
+  \end{tabular}
+\end{center}
 
 \heading{Samples}
+\sampleIN
+4
+10 9 10 3
+\sampleOUT
+1
+13
+23
+32
 
+\sampleEND
+
+\noindent \textit{For $k = 2$, the best partition is $(10,10)$ and $(9,3)$, giving the sum of $10+3 = 13$. For $k=3$, the best partition is $(10)$, $(10)$ and $(9,3)$ with the sum of $23$.}
+
+\medskip
 
 \sampleIN
-
+8
+15 25 29 30 43 44 45 55
 \sampleOUT
-\sampleCOMMENT
+1
+56
+101
+145
+188
+221
+256
+286
+
 \sampleEND
 
 

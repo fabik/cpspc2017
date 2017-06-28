@@ -15,8 +15,8 @@ using namespace std;
 const int MAXC = 10 * 1000 * 1000;
 const long long MAXZAK =1000LL*1000LL*1000LL*1000LL;
 typedef long long LL;
-const int N[] =       { 7 , 15, 2000, 2000  , 500*1000, 500*1000};
-const long long Z[] = { 30, 30, 2000, MAXZAK, MAXZAK  , MAXZAK  };
+const int N[] =       { 7 , 15, 100, 2000, 2000, 500*1000, 500*1000};
+const long long Z[] = { 30, 30, 500, 2000, MAXZAK, MAXZAK , MAXZAK  };
 
 int number = 1;
 char letter = 'a';
@@ -118,15 +118,29 @@ void long_work(int n){
 int main()
 {
 
-        for (int subtask = 0; subtask < 6; subtask++) {
-            uni=(subtask==4);
+        for (int subtask = 0; subtask < 7; subtask++) {
+            if ((subtask == 3) || (subtask == 5)){
+                uni = 1;
+            }
+            else {
+                uni = 0;
+            }
             for(int i=0;i<3;i++){
-            random_test(N[subtask], N[subtask] / 2, 1, Z[subtask]);
-            random_test(N[subtask], 2, 1, Z[subtask]);
-            random_test(N[subtask], N[subtask] - 3, 1, Z[subtask]);
+                random_test(N[subtask], N[subtask] / 2, 1, Z[subtask]);
+                random_test(N[subtask], 2, 1, Z[subtask]);
+                random_test(N[subtask], N[subtask] - 3, 1, Z[subtask]);
 
-            random_test(N[subtask], N[subtask] / 2, Z[subtask] - 20, Z[subtask]);
-            random_a(N[subtask], Z[subtask] / N[subtask]);
+                random_test(N[subtask], N[subtask] / 2, Z[subtask] - 20, Z[subtask]);
+                random_a(N[subtask], Z[subtask] / N[subtask]);
+            }
+            if ((subtask >= 2) && (subtask <= 4)){
+                    int _subtask = 1;
+                    random_test(N[_subtask], N[_subtask] / 2, 1, Z[_subtask]);
+                    random_test(N[_subtask], 2, 1, Z[_subtask]);
+                    random_test(N[_subtask], N[_subtask] - 3, 1, Z[_subtask]);
+
+                    random_test(N[_subtask], N[_subtask] / 2, Z[_subtask] - 20, Z[_subtask]);
+                    random_a(N[_subtask], Z[_subtask] / N[_subtask]);
             }
             if(subtask>=3)
                 long_work(N[subtask]);
