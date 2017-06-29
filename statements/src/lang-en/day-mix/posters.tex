@@ -6,7 +6,7 @@
 
 % \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
 % leave this values, if you are not interested
-\info{posters}{stdin}{stdout}{100}{5000 ms}{1 GB}
+\info{posters}{stdin}{stdout}{100}{2000 ms}{1 GB}
 
 Deep in the top-secret base of Keepers of the Sacred Postulates, there's The
 Wall with many rectangular posters depicting deep knowledge derived from their
@@ -22,9 +22,9 @@ be shadowed by placing a new poster at a given position.
 
 \heading{Task}
 
-You are given a description of $n$ disjoint rectangles in a plane. You are to answer
-$q$ queries of the form: What is the total area of intersection of the $n$ rectangles
-with a new given rectangle? Note that this doesn't add the queried rectangle to the plane.
+You are given a description of $n$ disjoint gray rectangles in a plane. You are to answer
+$q$ queries of the form: What is the total grey area in a given rectangle?
+Note that this doesn't affect the plane.
 
 The answer has to be produced online.
 
@@ -45,7 +45,7 @@ Let's denote by $l$ the answer to the last query (with $l=0$ for the first query
 $$x_i = (x_i' + l \cdot v) \pmod m$$
 $$y_i = (y_i' + l \cdot v) \pmod m$$
 
-The decoded constraints $x_1, y_1, x_2, y_2$ satisfy following conditions:
+The decoded coordinates $x_1, y_1, x_2, y_2$ satisfy following conditions:
 $0 \leq x_1, x_2 \leq r$, $0 \leq y_1, y_2 \leq c$. 
 
 \heading{Output}
