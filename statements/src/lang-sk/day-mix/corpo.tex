@@ -1,0 +1,76 @@
+\input sys/inputs.tex
+\usepackage[slovak]{babel}
+
+\begin{document}
+\bigheading{Ťažký život v korporácii}
+
+\info{corpo}{stdin}{stdout}{100}{500 ms}{1 GB}
+
+V Korporácii Sémantických Päťuholníkov sa dejú veľké zmeny. Nedávno bola totiž
+kúpená Wall-Trumpovou Firmou a chystajú sa v nej veľké zmeny. Ale o tom neskôr,
+najprv si potrebujeme vysvetliť organizačnú štruktúru firmy.
+
+Firma má jedného prezidenta. Prezident má niekoľko podriadených vice-prezidentov.
+Vice-prezidenti majú niekoľko manažérov, manažéri vicemanažérov, vicemanažéri
+hypertímlídrov, hypertímlídri supertíml...
+
+Celkovo má teda firma hlavného šéfa a veľa pracovníkov. Každý z pracovníkov okrem šéfa
+má práve jedného priameho nadriadeného (ale môže mať ľubovoľný počet priamych 
+podriadených). Tradičným spôsobom sa priami nadriadení rozširujú na celkových
+nadriadených: Ak $A$ je nadriadený $B$ a $B$ je priamy nadriadený $C$, potom $A$
+je nadriadeným $B$. A podobne, ak $A$ je nadriadeným $B$, potom $B$ je podriadeným $A$.
+
+Ale naspäť k veľkým zmenám. Noví oligarchovia sa rozhodli, že firmou riadne zatrasú,
+nech si nikto nemyslí, že to je len tak. Preto sa niektoré miesta zrušia,
+vzniknú nové exotické miesta\footnote{Napr. referent pre boj s korupciou}, niektorí ľudia sa iba
+presunú... Štruktúra firmy, aj keď ostane stromová, sa totálne
+zmení. Našťastie však nikoho nevyhodia a nikoho nového neprijmú; zamestnanci ostanú
+tí istí. A samotný šéf ostane na svojom starom dobrom teplučkom miestečku.
+
+Zo zmeny ostal akurát tak veľký chaos, nadriadení sa zdráhajú dávať komukoľvek
+akékoľvek rozkazy, však už na ďalší deň sa môžu ich podriadení zmeniť na
+nadriadených!
+
+\heading{Úloha}
+
+Dostanete popis firemnej štruktúry pred zmenou a po zmene. Pre každého zamestnanca
+zistite počet iných zamestnancov, ktorí boli jeho podriadenými pred zmenou a ostanú
+mu podriadení aj po zmene.
+
+\heading{Vstup}
+
+Na prvom riadku dostanete číslo $n$ ($2 \leq n \leq 200\,000$): počet zamestnancov vo firme.
+Zamestnanci sú očíslovaní číslami od $1$ do $n$; číslo $1$ patrí šéfovi.
+
+Druhý riadok obsahuje popis firemnej štruktúry -- $n-1$ čísel $a_2, a_3, \ldots, a_n$, kde
+číslo $a_i$ značí šéfa $i$-teho zamestnanca pred zmenou. Tretí riadok obsahuje tiež $n-1$
+čísel, popis firemnej štruktúry po zmene v rovnakom formáte. Môžete predpokladať, že oba
+popisy určujú strom zakorenený v $1$.
+
+\heading{Výstup}
+
+Vypíšte jeden riadok s $n$ číslami oddelenými medzerou -- $i$-te číslo označuje počet
+zamestnancov, ktorí sú podriadení zamestnancovi $i$ v oboch štruktúrach.
+
+\heading{Podúlohy}
+
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Podúloha & Body & Maximálne $n$  \\ \hline
+1       & 30     & 2\,000          \\ \hline
+2       & 70     & 200\,000        \\ \hline
+\end{tabular}
+
+\heading{Samples}
+
+\sampleIN
+5
+1 1 3 3
+1 2 3 1
+\sampleOUT
+4 0 1 0 0 
+
+\sampleEND
+
+\end{document}
