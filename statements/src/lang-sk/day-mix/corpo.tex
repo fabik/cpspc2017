@@ -6,7 +6,7 @@
 
 \info{corpo}{stdin}{stdout}{100}{500 ms}{1 GB}
 
-V Korporácii Sémantických Päťuholníkov sa dejú veľké zmeny. Nedávno bola totiž
+Korporácia Sémantických Päťuholníkov je hore nohami. Nedávno bola totiž
 kúpená Wall-Trumpovou Firmou a chystajú sa v nej veľké zmeny. Ale o tom neskôr,
 najprv si potrebujeme vysvetliť organizačnú štruktúru firmy.
 
@@ -16,8 +16,9 @@ hypertímlídrov, hypertímlídri supertíml...
 
 Celkovo má teda firma hlavného šéfa a veľa pracovníkov. Každý z pracovníkov okrem šéfa
 má práve jedného priameho nadriadeného (ale môže mať ľubovoľný počet priamych 
-podriadených). Tradičným spôsobom sa priami nadriadení rozširujú na celkových
-nadriadených: Ak $A$ je nadriadený $B$ a $B$ je priamy nadriadený $C$, potom $A$
+podriadených). Pojmy ,,priamy podriadený'' a ,,priamy nadriadený'' sa tradičným spôsobom
+dajú rozšíriť na ,,nadriadený'' a ,,podriadený'': Ak $A$ je nadriadený $B$ a $B$
+je priamy nadriadený $C$, potom $A$
 je nadriadeným $B$. A podobne, ak $A$ je nadriadeným $B$, potom $B$ je podriadeným $A$.
 
 Ale naspäť k veľkým zmenám. Noví oligarchovia sa rozhodli, že firmou riadne zatrasú,
@@ -40,10 +41,10 @@ mu podriadení aj po zmene.
 \heading{Vstup}
 
 Na prvom riadku dostanete číslo $n$ ($2 \leq n \leq 200\,000$): počet zamestnancov vo firme.
-Zamestnanci sú očíslovaní číslami od $1$ do $n$; číslo $1$ patrí šéfovi.
+Zamestnanci sú očíslovaní číslami od $1$ do $n$; číslo $1$ patrí šéfovi.
 
 Druhý riadok obsahuje popis firemnej štruktúry -- $n-1$ čísel $a_2, a_3, \ldots, a_n$, kde
-číslo $a_i$ značí šéfa $i$-teho zamestnanca pred zmenou. Tretí riadok obsahuje tiež $n-1$
+číslo $a_i$ značí šéfa $i$-teho zamestnanca pred zmenou. Tretí riadok obsahuje tiež $n-1$
 čísel, popis firemnej štruktúry po zmene v rovnakom formáte. Môžete predpokladať, že oba
 popisy určujú strom zakorenený v $1$.
 
