@@ -185,6 +185,61 @@ vector<ll> checkerboard(ll rmin, ll cmin, ll rmax, ll cmax, ll n) {
     return result;
 }
 
+vector<ll> unsortable(ll rmin, ll cmin, ll rmax, ll cmax, ll n) {
+    n -= n % 4;
+    if (n == 0) return vector<ll>();
+    ll rrange = rmax - rmin + 1;
+    ll crange = cmax - cmin + 1;
+    ll rside = 2 * rrange / n;
+    ll cside = 2 * crange / n;
+    vector<ll> result = unsortable (rmin + rside + 1, cmin + cside + 1, rmax - rside - 1, cmax - cside - 1, n - 4);
+
+    result.push_back(rmin); result.push_back(cmin); result.push_back(rmax - rside - 1); result.push_back(cmin + cside);
+    result.push_back(rmax - rside); result.push_back(cmin); result.push_back(rmax); result.push_back(cmax - cside - 1);
+    result.push_back(rmin + rside + 1); result.push_back(cmax - cside); result.push_back(rmax); result.push_back(cmax);
+    result.push_back(rmin); result.push_back(cmin + cside + 1); result.push_back(rmin + rside); result.push_back(cmax);
+    return result;
+}
+
+// Create posters along  a rectangle to produce queries with many intersections
+vector<ll> intersect(ll n) {
+    ll strips = 1 + n / 4;
+    ll rlen = r / strips;
+    ll clen = c / strips;
+    ll rdif = (rlen - 2) / 5;
+    ll cdif = (clen - 2) / 5;
+
+    vector<ll> result;
+
+    For(i, strips) {
+        result.push_back(myrand() % rdif); result.push_back(i*clen + (myrand() % cdif)); result.push_back(rlen - (myrand() % rdif) - 1); result.push_back((i+1)*clen - (myrand() % cdif) - 1);
+        result.push_back(r - rlen + myrand() % rdif); result.push_back(i*clen + (myrand() % cdif)); result.push_back(r - (myrand() % rdif)); result.push_back((i+1)*clen - (myrand() % cdif) - 1);
+        if (i > 0 && i < strips - 1) {
+            result.push_back(i*rlen + (myrand() % rdif)); result.push_back(myrand() % cdif); result.push_back((i+1)*rlen - (myrand() % rdif) - 1); result.push_back(clen - (myrand() % cdif));
+            result.push_back(i*rlen + (myrand() % rdif)); result.push_back(c - clen + (myrand() % cdif)); result.push_back((i+1)*rlen - (myrand() % rdif) - 1); result.push_back(c - (myrand() % cdif));
+        }
+    }
+    return result;
+}
+
+vector<ll> intersect_queries(ll n, ll q) {
+    ll strips = 1 + n / 4;
+    ll rlen = r / strips;
+    ll clen = c / strips;
+    ll rdif = (rlen - 2) / 5;
+    ll cdif = (clen - 2) / 5;
+
+    vector<ll> result;
+
+    For(i, q) {
+        ll xb = rdif + myrand() % (rlen - 2*rdif - 3) + 1, xe = rdif + myrand() % (rlen - 2*rdif - 3) + 1;
+        ll yb = cdif + myrand() % (clen - 2*cdif - 3) + 1, ye = cdif + myrand() % (clen - 2*cdif - 3) + 1;
+
+        result.push_back(xb); result.push_back(yb); result.push_back(r - xe); result.push_back(c - ye);
+    }
+    return result;
+}
+
 vector<ll> quadrants(ll n) {
     vector<ll> res = checkerboard(0, 0, r/2, c/2, n/3);
     for (ll e : checkerboard(r/2, c/2, r, c, n/3)) res.push_back(e);
@@ -198,6 +253,9 @@ int main () {
     def_node = new node(-1000, -1000, nullptr, nullptr);
 
     string mode, onlinemode;
+
+    // As in: 1/letzero_chance is the chance of letting a zero-answer-query get to the output
+    ll letzero_chance = 50;
     ll MOD, seed;
     cin >> mode >> onlinemode >> r >> c >> n >> q >> MOD >> seed;
     srand(seed);
@@ -215,6 +273,12 @@ int main () {
     }
     else if (mode == "checker") {
         rects = checkerboard(0, 0, r, c, n);
+    }
+    else if (mode == "unsortable") {
+        rects = unsortable(0, 0, r, c, n);
+    }
+    else if (mode == "intersect") {
+       rects = intersect(n);
     }
     n = rects.size() / 4;
 
@@ -255,18 +319,25 @@ int main () {
     }
 
     ll lastres = 0;
-    vector<ll> queries = checkerboard(0, 0, r, c, q/4);
-    for (ll e : strip(0, 0, r, c, q/4)) queries.push_back(e);
-    for (ll e : trans(strip(0, 0, c, r, q/4))) queries.push_back(e);
 
-    while ((ll) queries.size() != 4*q) {
-        ll x1 = myrand() % r, y1 = myrand() % c, x2 = myrand() % r, y2 = myrand() % c;
-        while (x1 == x2) x1 = myrand() % r;
-        while (y1 == y2) y1 = myrand() % c;
-        queries.push_back(x1);
-        queries.push_back(y1);
-        queries.push_back(x2);
-        queries.push_back(y2);
+    vector<ll> queries;
+    if (mode == "intersect") {
+        queries = intersect_queries(n, q);
+    }
+    else {
+        queries = checkerboard(0, 0, r, c, q/4);
+        for (ll e : strip(0, 0, r, c, q/4)) queries.push_back(e);
+        for (ll e : trans(strip(0, 0, c, r, q/4))) queries.push_back(e);
+
+        while ((ll) queries.size() != 4*q) {
+            ll x1 = myrand() % r, y1 = myrand() % c, x2 = myrand() % r, y2 = myrand() % c;
+            while (x1 == x2) x1 = myrand() % r;
+            while (y1 == y2) y1 = myrand() % c;
+            queries.push_back(x1);
+            queries.push_back(y1);
+            queries.push_back(x2);
+            queries.push_back(y2);
+        }
     }
 
     shuffle.clear();
@@ -282,7 +353,11 @@ int main () {
         else mod = 0;
         ll prodmod = (mod * (lastres % MOD)) % MOD;
 
+        ll redo_offline = 0;
+
         do {
+            if (x1 == x2) cerr << "Aaaa!\n";
+            if (y1 == y2) cerr << "Aaaa!\n";
             if (x1 > x2) swap(x1, x2);
             if (y1 > y2) swap(y1, y2);
 
@@ -294,12 +369,18 @@ int main () {
             ll leftres = x1 * left.second + left.first;
             ll rightres = x2 * right.second + right.first;
             lastres = rightres - leftres;
-            if (lastres == 0) {
+            redo_offline = myrand() % letzero_chance;
+            if (lastres == 0 && (onlinemode == "online" || redo_offline != 0)) {
                 x1 = myrand() % (r + 1); y1 = myrand() % (c + 1); x2 = myrand() % (r + 1); y2 = myrand() % (c + 1);
+                while(x1 == x2) x1 = myrand() % r;
+                while(y1 == y2) y1 = myrand() % c;
             }
-        } while (lastres == 0 && onlinemode == "online");
+        } while (lastres == 0 && (onlinemode == "online" || redo_offline != 0));
 
         ll x1_ = (x1 - prodmod + MOD) % MOD, y1_ = (y1 - prodmod + MOD) % MOD, x2_ = (x2 - prodmod + MOD) % MOD, y2_ = (y2 - prodmod + MOD) % MOD;
+
+        if (rand() % 2 == 1) swap(x1_, x2_);
+        if (rand() % 2 == 1) swap(y1_, y2_);
 
         printf("%lld %lld %lld %lld %lld\n", x1_, y1_, x2_, y2_, mod);
         
