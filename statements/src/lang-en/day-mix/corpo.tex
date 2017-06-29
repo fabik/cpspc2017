@@ -1,0 +1,53 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Corporate life (after hostile takover)}
+
+\textit{JanuszPol} is a Polish company which has a long tradition to its name. Recently, though, it fell into dire financial situation, and was eventually taken over by a foreign competitor. The new board decided to completely rebuild the the company organization. Until now, it was a typical tree structure:
+
+\begin{itemize}
+ \item There was exactly one executive director, who had no superiors,
+ \item Every other employee had exactly one superior, and there were no cyclic relations.
+\end{itemize}
+
+For every employee $x$, their \textit{subordinate} is every employee $y$, who is under $x$ in the tree (there is a sequence of direct superiors from $y$ to $x$).
+
+After the takeover, the company will employ the same people, and it will also be organized as a tree, but every employee will receive a diffrent position, so the shape of the tree may change completely. The executive director is, however, guaranteed to keep the position. Now everyone is afraid to give orders to anyone else -- any moment now, a subordinate may become the superior...
+
+\heading{Task}
+
+Given the description of the tree before and after the takover, for every employee $x$ determine the number of the people who were subordinates of $x$ and will remain the subordinates after the takeover.
+
+\heading{Input}
+
+The first line of the input contains an integer $n$ ($2 \leq n \leq 200\,000$): the number of employees. The employees are numbered from $1$ to $n$, with the person number $1$ being the executive director. The second line contains the company structure before the takeover: there are $n-1$ numbers $a_2, a_3, \ldots, a_n$ with $a_i$ being the number of $i$'s superior. The third line also contains $n-1$ numbers $b_2, b_3, \ldots, b_n$, where $b_i$ is the superior of $i$ after the takeover. You may assume that both descriptions define a proper tree rooted at $1$.
+
+\heading{Output}
+
+Output a single line containing $n$ numbers -- $i$-th of them should be the number of people who are $i$'s subordinates in both trees at once.
+
+\heading{Subtasks}
+
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Subtask & Points & Maximal $n$  \\ \hline
+1       & 30     & 1\,000             \\ \hline
+2       & 20     & 15\,000           \\ \hline
+3       & 20     & 100\,000          \\ \hline
+3       & 30     & 200\,000          \\ \hline
+\end{tabular}
+
+\heading{Samples}
+
+\sampleIN
+5
+1 1 3 3
+1 2 3 1
+\sampleOUT
+4 0 1 0 0 
+
+\sampleEND
+
+\end{document}
