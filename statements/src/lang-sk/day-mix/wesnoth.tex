@@ -1,0 +1,117 @@
+\input sys/inputs.tex
+
+\usepackage[slovak]{babel}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\bigheading{The Battle for Wesnoth}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{wesnoth}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+Poznáte The Battle for Wesnoth? Je to celkom fajná ťahová stratégia s fantasy tématikou. Sú v nej
+elfovia, ohyzdi, nemŕtvi, trpaslíci a draky! V tejto úlohe potrebujete vedieť, že každá jednotka má niekoľko životov (HP) a tiež ako v Battle for Wesnoth prebieha boj.
+
+Bude nás zaujímať iba najjednoduchší prípad boja: obyčajný útok na bezbrannú jednotku. Takýto útok
+sa dá popísať troma celými číslami:
+
+\begin{itemize}
+ \item $d$ -- zranenie (počet stratených HP) spôsobené úspešným úderom;
+ \item $b$ -- počet úderov;
+ \item $p$ -- pravdepodobnosť (v percentách) že úder je úspešný.
+\end{itemize}
+
+Čísla $d$ a $b$ sú v hre vlastnosťami útočníka, zatiaľ čo $p$ je väčšinou určené terénom, na ktorom
+stojí brániaca sa jednotka. V našom prípade však budeme predpokladať, že aj $p$ je vlastnosťou útočníka
+(napríklad ako pri magických útokoch v BfW).
+
+Napríklad, majme útok s $d=6$, $b=2$, a $p=60$. Tento útok sa môže skončiť troma rôznymi výsledkami:
+
+\begin{itemize}
+ \item So šancou $16\,\%$, útočník oba údery netrafí a nespôsobí obrancovi žiadne zranenie.
+ \item So šancou $48\,\%$, útočník jeden z úderov trafí a jeden netrafí, spôsobiac obrancovi $6$ zranenia.
+ \item So šancou $36\,\%$, útočník trafí oba údery, spôsobiac dokopy $12$ zranenia.
+\end{itemize}
+
+Keď počet životov jednotky klesne na nekladné číslo, jednotka umrie.
+
+David práve hrá rozšírenie Wesnothu so špeciálnou jednotkou, Elfskou Princeznou, ktorá má veľmi špeciálny magický útok:
+Namiesto parametrov $d$ a $b$ má iba jeden parameter $m$. Kedykoľvek Elfská Princezná zaútočí, hráč
+si môže zvoliť ľubovoľné $d$ a $b$ za podmienky, že to budú kladné celé čísla spĺňajúce 
+$d \cdot b \leq m$.
+
+David občas potrebuje, aby jeho Elfská Princezná zabila ohyzdného nemŕtveho kostlivca alebo kostnatého
+ohyzdieho bojovníka, takže by rád vedel, aký výber $d$ a $b$ mu dá najväčšiu pravdepodobnosť, že
+nepriateľa zabije.
+
+\heading{Úloha}
+
+Dostanete parametre Princeznej $p$ a $m$.
+Pre každú jednotku, ktorú David potrebuje zabiť, nájdite optimálnu voľbu $d$ a $b$.
+
+\heading{Vstup}
+
+Prvý riadok vstupu obsahuje dve celé čísla $m, p$ ($1\leq m\leq 10^6$, $1\leq p\leq 99$) -- parametre
+útočníka. Druhý riadok obsahuje celé číslo $n$ ($1\leq n\leq 10^5$) -- počet jednotiek, ktoré treba zabiť. Tretí riadok obsahuje $n$ celých čísel $h_1,h_2,\dots,h_n$ ($1\leq h_i\leq 10^6$),
+kde $h_i$ je počet životov $i$-tej jednotky, ktorú treba zabiť.
+
+
+\heading{Výstup}
+
+Pre každú jednotku vypíšte jeden riadok obsahujúci dve čísla -- $d$ a $b$, ktoré dávajú maximálnu pravdepodobnosť zabitia tejto jednotky.
+Vaša odpoveď je považovaná za správnu, ak sa pravdepodobnosť zabitia jednotky pri vašom výstupe líši od optimálnej
+nanajvýš o $10^{-6}$.
+
+\heading{Podúlohy}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+	\hline
+	Podúloha & Obmedzenia  & Body \\
+	\hline
+	1 & $m \leq 10$ & 10 \\
+	\hline
+	2 & $m \leq 100$ & 10 \\
+	\hline
+	3 & $m \leq 1\,000$ & 20 \\
+	\hline
+	4 & $n=1$, $m\leq 100\,000$ & 20 \\
+	\hline
+	5 & $m \leq 100\,000$ & 25 \\
+	\hline
+	6 & bez ďalších obmedzení & 15 \\
+	\hline
+\end{tabular}
+\end{center}
+
+\newpage
+\begin{wrapfigure}{r}{4cm}
+\includegraphics[width=4cm]{img/wesnoth_warning}
+\end{wrapfigure}
+\heading{Poznámka}
+\bigskip
+\bigskip
+Výpočet sa dá s dostatočnou presnosťou urobiť na double-och.
+Samozrejme, musíte sa vyhnúť pretečeniu, podtečeniu a nebezbečným operáciám,
+ako sčítanie dvoch čísel líšiacich sa veľkosťou o veľa rádov (napr. pre $a=0.5$ a $b=10^{-100}$,
+$a+b$ sa sčíta na $a$).
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\heading{Príklady}
+
+\sampleIN
+10 60
+3
+5 6 7
+\sampleOUT
+5 2
+2 5
+7 1
+
+\sampleEND
+
+Zodpovedajúce pravdepodobnosti sú $84\,\%$, $68.256\,\%$, a $60\,\%$.
+\end{document}
