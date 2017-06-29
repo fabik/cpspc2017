@@ -1,0 +1,101 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{Bitva o Wesnoth}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{wesnoth}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+Znáte Bitvu o Wesnoth? Je to vynikající tahová strategie na motivy fantasy.
+Ve hře potkáte spoustu elfů, skřetů, nemrtvých, trpaslíků i zuřících draků!
+Co se týče naší úlohy, důležité je, že každá jednotka má nějaký počet životů,
+které jí během soubojů ubývají. Dále musíte pochopit, jak takový souboj probíhá.
+Pro naše účely stačí vysvětlit ten nejjednodušší příklad --
+běžný útok na jednotku, která nemá žádnou obranu.
+
+Takový útok lze popsat pomocí tří celých čísel:
+\begin{itemize}
+ \item $d$ -- poškození způsobené úspěšným úderem;
+ \item $b$ -- počet úderů;
+ \item $p$ -- pravděpodobnost (v procentech), že úder bude úspěšný.
+\end{itemize}
+Ve hře jsou $d$ a $b$ vlastnosti útočníka, zatímco $p$ je obvykle určeno podle terénu,
+na kterém stojí obránce; nicméně pro naše účely budeme i $p$ považovat za vlastnost útočníka
+(jako je tomu u magických útoků).
+
+Jako příklad uvažme útok s $d=6$, $b=2$ a $p=60$. Jsou tři možnosti, jak může tento útok dopadnout:
+\begin{itemize}
+ \item S pravděpodobností $16\,\%$ útočník mine v obou případech a nezpůsobí žádné zranění.
+ \item S pravděpodobností $48\,\%$ se útočník trefí jedním z úderů a mine druhým, čímž způsobí zranění $6$ životů.
+ \item S pravděpodobností $36\,\%$ se útočník trefí v obou případech, čímž dohromady způsobí zranění $12$ životů.
+\end{itemize}
+Jakmile počet životů bránící jednotky klesne na nekladné číslo, jednotka zemře.
+
+David právě hraje rozšíření, kde je speciální jednotka elfí princezna, která má zvláštní magický útok:
+Místo čísel $d$ a $b$ je popsána celým číslem $m$, a kdykoli útočí, může si hráč zvolit
+za $d$ a $b$ libovolná kladná celá čísla splňující $d\cdot b\leq m$.
+
+Tu a tam David potřebuje, aby jeho elfí princezna zabila ošklivého nemrtvého kostlivce nebo páchnoucího skřetího válečníka,
+a tak by David rád věděl, která volba čísel $d$ a $b$ povede k největší pravděpodobnosti, že nepřátelská jednotka zemře.
+
+\heading{Úloha}
+
+Pro každou jednotku, kterou David potřebuje zabít, zjistěte nejlepší výběr čísel $d$ a $b$.
+
+\heading{Vstup}
+
+První řádek vstupu obsahuje celá čísla $m$ ($1\leq m\leq 10^6$)
+a $p$ ($1\leq p\leq 99$) -- parametry útočící jednotky.
+Druhý řádek obsahuje celé číslo $n$ ($1\leq n\leq 10^5$) -- počet jednotek na zabití.
+Třetí řádek obsahuje $n$ celých čísel $h_1,h_2,\dots,h_n$ ($1\leq h_i\leq 10^6$),
+kde $h_i$ je počet životů $i$-té jednotky na zabití.
+
+
+\heading{Výstup}
+
+Pro každou jednotku na zabití vypište dvě čísla: hodnoty $d$ a $b$, pro které je nejvyšší možná
+šance, že nepřátelská jednotka souboj nepřežije. Vaše odpověď bude uznána, pokud se pravděpodobnost
+při vašem návrhu bude od optimální hodnoty lišit o nejvýš $10^{-6}$.
+
+\heading{Podproblémy}
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	Podproblém & Omezení  & Body \\
+	\hline
+	1 & $m \leq 10$ & 10 \\
+	\hline
+	2 & $m \leq 100$ & 10 \\
+	\hline
+	3 & $m \leq 1\,000$ & 20 \\
+	\hline
+	4 & $n=1$, $m\leq 100\,000$ & 20 \\
+	\hline
+	5 & $m \leq 100\,000$ & 25 \\
+	\hline
+	6 & žádná omezení & 15 \\
+	\hline
+\end{tabular}
+
+\heading{Poznámka}
+
+Buďte opatrní při práci s čísly s plovoucí desetinnou čárkou.
+Zejména se vyvarujte nebezpečných operací jako sčítání čísel velmi odlišných velikostí.
+
+\heading{Příklad}
+
+\sampleIN
+10 60
+3
+5 6 7
+\sampleOUT
+5 2
+2 5
+7 1
+
+\sampleEND
+
+Odpovídající pravděpodobnosti jsou $84\,\%$, $68.256\,\%$ a $60\,\%$.
+\end{document}

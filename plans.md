@@ -24,6 +24,6 @@ Day SK
 Day MIX
 -------
 
-  * **secret** - (graph, divide and conquer) determine whether a path between two given points exists in a compressed image
+  * **wesnoth** - (combinatorics) given a probability of a successful blow and variable m, find the optimal damage d and the number of blows b such that d * b <= m for every defender
   * **corpo** - (trees) for two trees built on the same set of vertices, for every vertex determine the number of other vertices that are its descendants in both trees
   * **posters** - (geometry, sweepline) for set S of disjoint rectangles, compute intersection areas of S with query rectangles

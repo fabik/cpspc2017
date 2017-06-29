@@ -1,0 +1,100 @@
+\input sys/inputs.tex
+
+\begin{document}
+
+\bigheading{The Battle for Wesnoth}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{wesnoth}{stdin}{stdout}{100}{100 ms}{1 GB}
+
+Do you know The Battle for Wesnoth? It is a splendid turn-based strategy game with fantasy theme.
+There are elves, orcs, undead, dwarves, and even drakes roaring around!
+As for this problem, you must know that every unit has some number of hitpoints, which is reduced during combats,
+and you must also understand how the combat proceeds. We will be interested only in the simplest case --
+a common attack at a defenseless unit.
+
+Such an attack is described by three integers:
+\begin{itemize}
+ \item $d$ -- the damage done by a successful blow;
+ \item $b$ -- the number of blows;
+ \item $p$ -- the probability (in percentage) that a blow is successful.
+\end{itemize}
+In the game, $d$ and $b$ are properties of the attacker, whereas $p$ is usually given by the terrain
+occupied by the defender, but for our purposes, we assume that it is a property of the attacker, too
+(as with magical attacks).
+
+As an example, consider an attack with $d=6$, $b=2$, and $p=60$. There are three possible outcomes:
+\begin{itemize}
+ \item By $16\,\%$, the attacker misses both times and does no damage at all.
+ \item By $48\,\%$, the attacker hits with one of the blows and misses with the other one,
+ doing the damage of $6$ hitpoints.
+ \item By $36\,\%$, the attacker hits both times, doing the total damage of $12$ hitpoints.
+\end{itemize}
+When the number of hitpoints of the defending unit becomes non-positive, the unit dies.
+
+David is currently playing an add-on where a special unit, the Elvish Princess, has a very special magical attack:
+Instead of $d$ and $b$, she is described by an integer $m$, and when she attacks, the player may choose
+$d$ and $b$ to be arbitrary positive integers as long as $d\cdot b\leq m$.
+
+Every now and then, David needs his Elvish Princess to kill an ugly undead skeleton or a stinking orcish warrior,
+so he would like to know which choice of $d$ and $b$ gives the highest probability of killing the enemy.
+
+\heading{Task}
+
+For every unit David needs to kill, find the best choice of $d$ and $b$.
+
+\heading{Input}
+
+The first line of the input contains an integer $m$ ($1\leq m\leq 10^6$)
+and an integer $p$ ($1\leq p\leq 99$) -- the parameters of the attacker.
+The second line contains an integer $n$ ($1\leq n\leq 10^5$) -- the number of units to be killed.
+The third line contains $n$ integers $h_1,h_2,\dots,h_n$ ($1\leq h_i\leq 10^6$),
+where $h_i$ is the number of hitpoints of the $i$-th unit to be killed.
+
+
+\heading{Output}
+
+For each unit to be killed, output two integers: the $d$ and $b$ which give the maximum probability of killing the unit.
+Your answer will be accepted if the probability given by your output differs from the optimum by no more than $10^{-6}$.
+
+\heading{Subtasks}
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	Subtask & Constraints  & Points \\
+	\hline
+	1 & $m \leq 10$ & 10 \\
+	\hline
+	2 & $m \leq 100$ & 10 \\
+	\hline
+	3 & $m \leq 1\,000$ & 20 \\
+	\hline
+	4 & $n=1$, $m\leq 100\,000$ & 20 \\
+	\hline
+	5 & $m \leq 100\,000$ & 25 \\
+	\hline
+	6 & no additional constraints & 15 \\
+	\hline
+\end{tabular}
+
+\heading{Remark}
+
+Be careful with the floating-point arithmetics.
+In particular, avoid unsafe operations like adding numbers of very different magnitudes.
+
+\heading{Sample}
+
+\sampleIN
+10 60
+3
+5 6 7
+\sampleOUT
+5 2
+2 5
+7 1
+
+\sampleEND
+
+The corresponding probabilities are $84\,\%$, $68.256\,\%$, and $60\,\%$.
+\end{document}
