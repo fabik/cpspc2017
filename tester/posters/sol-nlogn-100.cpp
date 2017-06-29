@@ -112,7 +112,7 @@ int main () {
         if (x1 > x2) swap(x1, x2);
         if (y1 > y2) swap(y1, y2);
 
-        if (y1 < 0 || x1 < 0 || x1 > r || y2 > c) {
+        if (y1 < 0 || x1 < 0 || x1 > r || y2 > c || x1 == x2 || y1 == y2) {
             cerr << "BAD INPUT A! " << i << "\n";
             return 1;
         }
@@ -149,7 +149,7 @@ int main () {
         if (x1 > x2) swap(x1, x2);
         if (y1 > y2) swap(y1, y2);
 
-        if (y1 < 0 || x1 < 0 || x1 > r || y2 > c) {
+        if (y1 < 0 || x1 < 0 || x1 > r || y2 > c || x1 == x2 || y1 == y2) {
             cerr << "BAD INPUT B! " << i << "\n";
             return 1;
         }
