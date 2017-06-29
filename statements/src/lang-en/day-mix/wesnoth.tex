@@ -80,8 +80,10 @@ Your answer will be accepted if the probability given by your output differs fro
 
 \heading{Remark}
 
-Be careful with the floating-point arithmetics.
-In particular, avoid unsafe operations like adding numbers of very different magnitudes.
+The computation can be done with far enough precision using doubles.
+Of course, you must avoid overflow and underflow as well as doing unsafe operations
+like adding numbers of very different magnitudes (e.g. for $a=0.5$ and $b=10^{-100}$,
+$a+b$ would be evaluated equal to $a$).
 
 \heading{Sample}
 

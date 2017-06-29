@@ -81,9 +81,10 @@ při vašem návrhu bude od optimální hodnoty lišit o nejvýš $10^{-6}$.
 
 \heading{Poznámka}
 
-Buďte opatrní při práci s čísly s plovoucí desetinnou čárkou.
-Zejména se vyvarujte nebezpečných operací jako sčítání čísel velmi odlišných velikostí.
-
+Celý výpočet lze provést s více než dostatečnou přesností pomocí doublů.
+Samozřejmě se musíte vyvarovat přetečení, podtečení a provádění nebezpečných operací
+jako sčítání čísel velmi odlišných velikostí (např. pro $a=0.5$ a $b=10^{-100}$
+by $a+b$ bylo vyhodnoceno jako rovno $a$).
 \heading{Příklad}
 
 \sampleIN
