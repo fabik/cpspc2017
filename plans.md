@@ -25,5 +25,5 @@ Day MIX
 -------
 
   * **secret** - (graph, divide and conquer) determine whether a path between two given points exists in a compressed image
-  * **descendants** - (trees) for two trees built on the same set of vertices, for every vertex determine the number of other vertices that are its descendants in both trees
+  * **corpo** - (trees) for two trees built on the same set of vertices, for every vertex determine the number of other vertices that are its descendants in both trees
   * **posters** - (geometry, sweepline) for set S of disjoint rectangles, compute intersection areas of S with query rectangles
