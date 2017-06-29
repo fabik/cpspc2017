@@ -30,7 +30,7 @@ The answer has to be produced online.
 
 \heading{Input}
 
-The first line contains five numbers, $r, c, n, q, m$, ($1 \leq r, c < m \leq 10^9 + 9$, $0 \leq n,q \leq 10^5$),
+The first line contains five numbers, $r, c, n, q, m$, ($1 \leq r, c < m \leq 10^9 + 9$, $0 \leq n,q \leq 50\,000$),
 the height and width of the wall, number of posters on the wall, number of
 queries and a modulus for computing the queries (we will explain that below).
 
@@ -58,18 +58,20 @@ There are several subtasks. In offline subtasks, the value $v$ will be zero for 
 
 \bigskip
 
-\centering
-\begin{tabular}{|l|l|l|l|l|}
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
 \hline
-subtask & points & maximum $r$  & maximum $c$   & online    \\ \hline
-1       & 60     & $300\,000$   & $300\,000$    & no        \\ \hline
-2       & 10     & $10^9$       & $200\,000$    & no        \\ \hline
-3       & 10     & $10^9$       & $10^9$        & no        \\ \hline
-4       & 10     & $100\,002$   & $100\,002$    & yes       \\ \hline
-5       & 10     & $10^9 + 8$   & $10^9 + 8$    & yes       \\ \hline
+subtask & points & maximum $r$  & maximum $c$   & maximum $n$ and $q$ & online    \\ \hline
+1       & 10     & $500$        & $500$         & $500$     & no        \\ \hline
+2       & 10     & $5000$       & $5000$        & $5000$    & no        \\ \hline
+3       & 40     & $300\,000$   & $300\,000$    & $50\,000$ & no        \\ \hline
+4       & 10     & $10^9$       & $200\,000$    & $50\,000$ & no        \\ \hline
+5       & 10     & $10^9$       & $10^9$        & $50\,000$ & no        \\ \hline
+6       & 10     & $100\,002$   & $100\,002$    & $50\,000$ & yes       \\ \hline
+7       & 10     & $10^9 + 8$   & $10^9 + 8$    & $50\,000$ & yes       \\ \hline
 \end{tabular}
+\end{center}
 
-% TODO:
 \heading{Samples}
 
 
