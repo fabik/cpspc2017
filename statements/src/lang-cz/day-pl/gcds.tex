@@ -1,0 +1,84 @@
+\input sys/inputs.tex
+\usepackage[czech]{babel}
+
+\begin{document}
+
+\bigheading{Největší společní dělitelé}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{gcds}{stdin}{stdout}{100}{2000 ms}{1 GB}
+
+
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+\heading{Úloha}
+
+Je dáno $n$ přirozených čísel $a_1,a_2,\dots ,a_n$. Rozdělíme je do $k$ skupin, pro každou skupinu spočítáme jejího
+největšího společného dělitele a těchto $k$ výsledků sečteme.
+
+Vaším úkolem je pro každé $k = 1, 2, \ldots, n$ určit, jakého největšího součtu lze takto dosáhnout.
+
+\heading{Vstup}
+
+Na prvním řádku vstupu je celé číslo $n$ ($1 \leq n \leq 500\,000$).
+Na druhém řádku jsou celá čísla $a_1,a_2,\dots ,a_n$ ($1\leq a_i\leq 10^{12}$).
+
+\heading{Výstup}
+
+Vypište $n$ řádků a na $k$-tém z nich nechť je největší součet, kterého lze dosáhnout při dělení na $k$ skupin.
+
+\heading{Podproblémy}
+
+\begin{center}
+  \begin{tabular}{|c|p{8cm}|c|}
+    \hline
+    \textbf{Podproblém} & \textbf{Omezení} & \textbf{Body} \\ \hline
+    1 & $n \leq 7$ & 5 \\ \hline
+    2 & $n \leq 15$ & 5 \\ \hline
+    3 & $n \leq 100$, $a_i \leq 500$ & 8 \\ \hline
+    4 & $n \leq 2000$, $a_i \leq 2000$, $a_i$ jsou po dvou různá & 8 \\ \hline
+    5 & $n \leq 2000$ & 14 \\ \hline
+    6 & $a_i$ jsou po dvou různá & 25 \\ \hline
+    7 & žádná omezení & 35 \\ \hline
+  \end{tabular}
+\end{center}
+
+\heading{Příklady}
+\sampleIN
+4
+10 9 10 3
+\sampleOUT
+1
+13
+23
+32
+
+\sampleEND
+
+\noindent \textit{Pro $k = 2$ je nejlepší rozdělení na skupiny $(10,10)$ a $(9,3)$, což dává součet $10+3 = 13$.
+Pro $k=3$ je nejlepší rozdělení na skupiny $(10)$, $(10)$ a $(9,3)$, což dává součet $10+10+3 = 23$.}
+
+\medskip
+
+\sampleIN
+8
+15 25 29 30 43 44 45 55
+\sampleOUT
+1
+56
+101
+145
+188
+221
+256
+286
+
+\sampleEND
+
+
+
+\end{document}

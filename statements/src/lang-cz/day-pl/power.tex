@@ -1,0 +1,80 @@
+\input sys/inputs.tex
+\usepackage[czech]{babel}
+
+\begin{document}
+
+\bigheading{Elektrárny}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{power}{stdin}{stdout}{100}{3000 ms}{1 GB}
+
+Ocitáme se v daleké budoucnosti, kdy se lidem podařil opravdový majstrštych. Našli a kolonizovali nedalekou planetu,
+která by mohla být skvělým zdrojem energie, a proto by nyní bylo vhodné zde postavit několik elektráren.
+Poté co se určily a upravily pozemky pro stavbu, přišli experti s vážným varováním:
+některé pozemky jsou příliš blízko sebe, což nebezpečně zvyšuje riziko řetězové reakce při výbuchu.
+Dotace na stavbu ale byly již přiděleny, takže stavba všech elektráren musí být bezpodmínečně dokončena,
+výbuch nevýbuch.
+
+Naštěstí lze nebezpečí ještě trochu snížit. Elektrárny jsou totiž dvou typů: jedny pracují
+se světlou energií a druhé s temnou energií. A světlá energie s temnou nijak neinteraguje, takže
+postavit blízko sebe dvě elektrárny odlišných typů není nijak nebezpečné.
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+\heading{Úloha}
+
+Na vstupu jsou dány pozice $n$ bodů (pozemků pro elektrárny) v rovině (na povrchu planety).
+Vaším úkolem je pro každý pozemek určit, zda zde má být postavena elektrárna pracující se světlou energií, nebo s temnou, a to tak, aby minimální vzdálenost mezi dvěma elektrárnami stejného typu byla co největší.
+Tato vzdálenost bude rovněž součástí výstupu, a abychom se vyhnuli iracionálním číslům na výstupu,
+budeme po vás chtít vypsat její druhou mocninu, která je vždy celým číslem.
+
+\heading{Vstup}
+
+Na prvním řádku vstupu je celé číslo $N$ ($3 \leq N \leq 100\,000$) -- počet pozemků.
+Následuje $N$ řádků, z nichž $i$-tý obsahuje celá čísla $x_i$, $y_i$ ($0 \leq x_i, y_i \leq 10^9$)
+-- souřadnice $i$-tého pozemku. Zadané body jsou po dvou různé.
+
+\heading{Výstup}
+
+Na první řádek výstupu vypište druhou mocninu největší možné minimální vzdálenosti.
+Na druhý řádek vypište počet elektráren pracujících se světlou energií a na třetí řádek mezerami oddělený
+seznam jejich čísel (elektrárny jsou číslovány od jedné dle pořadí na vstupu).
+Podobně na čtvrtý řádek vypište počet elektráren pracujících s temnou energií a na pátý řádek jejich seznam.
+Zřejmě je vždy více možných řešení; vypište kterékoli.
+
+\heading{Podproblémy}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+Podproblém & Body & Nejvyšší $n$  \\ \hline
+1       & 10     & 100           \\ \hline
+2       & 25     & 2000         \\ \hline
+3       & 65     & 100\,000       \\ \hline
+\end{tabular}
+\end{center}
+
+\heading{Příklady}
+
+
+\sampleIN
+4
+0 3
+0 0
+3 0
+3 3
+\sampleOUT
+18
+2
+1 3
+2
+2 4
+\sampleCOMMENT
+\sampleEND
+
+
+
+\end{document}

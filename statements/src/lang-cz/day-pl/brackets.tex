@@ -1,0 +1,92 @@
+\input sys/inputs.tex
+\usepackage[czech]{babel}
+
+\begin{document}
+
+\bigheading{Závorky}
+
+% \info{task_name}{infile}{outfile}{points}{timelimit}{memlimit}
+% leave this values, if you are not interested
+\info{brackets}{stdin}{stdout}{100}{200 ms}{1 GB}
+
+
+
+% This is how you can include a picture:
+
+% \includegraphics[height=5cm]{img/picture.jpg}
+
+\heading{Úloha}
+
+Závorkou rozumíme jeden z následujících symbolů: \texttt{()[]\{\}<>}. Řetězec závorek nazveme \textit{dobře uzávorkovaný},
+právě když existuje vzájemně jednoznačné zobrazení mezi levými a pravými závorkami takové, že:
+\begin{itemize}
+ \item Každá levá závorka je nalevo od odpovídající pravé závorky.
+ \item Odpovídající si závorky jsou vždy stejného typu.
+ \item Žádné dva páry odpovídajících si závorek se nekříží -- buď je jeden celý nalevo od druhého, nebo je jeden celý uvnitř druhého.
+\end{itemize}
+Například výraz \texttt{([])<>} je dobře uzávorkovaný, zatímco \texttt{<\{>\}} není, jelikož páry odpovídajících si závorek se kříží.
+
+Je dán orientovaný multigraf, kde každá hrana je označena nějakou závorkou.
+Sled (tj. cestu, kde se můžou libovolně opakovat vrcholy i hrany)
+nazveme \textit{validní}, právě když výraz přečtený po jeho hranách je dobře uzávorkovaný.
+Vaším úkolem je zjistit délku nejkratšího validního sledu mezi danými dvěma vrcholy $s$ a $t$.
+
+
+\heading{Vstup}
+
+Na prvním řádku vstupu jsou celá čísla $n, m, s, t$ ($1 \leq n \leq 200$, $0 \leq m \leq 2000$, $1 \leq s, t \leq n$) -- počet vrcholů, počet hran, číslo startovního vrcholu a číslo cílového vrcholu.
+Následuje $m$ řádků, které popisují jednotlivé hrany. Každý řádek obsahuje počáteční vrchol $x$, koncový vrchol $y$
+($1 \leq x, y \leq n$) a závorku. Připomínáme, že se jedná o multigraf, tedy může obsahovat smyčky ($x=y$)
+a násobné hrany.
+
+\heading{Výstup}
+
+Na jediný řádek výstupu vypište jediné číslo -- délku nejkratšího validního sledu mezi $s$ a $t$.
+Pokud žádný neexistuje, vypište $-1$. Můžete předpokládat, že správná odpověď nikdy nepřesáhne $10^{18}$.
+
+\heading{Podproblémy}
+
+\begin{tabular}{|c|c|c|}
+	\hline
+	Podproblém & Body  & Omezení \\
+	\hline
+	1 & 16 & $n \leq 10, m\leq 50$ \\
+	\hline
+	2 & 16 & $n \leq 20, m\leq 100$\\
+	\hline
+	3 & 16 & $n \leq 50$\\
+	\hline
+	4 & 16 & $n \leq 100$ \\
+	\hline
+	5  & 10 & $s = 1$, $t = n$, $a < b$ pro každou hranu $(a,b)$\\
+	\hline
+	6 & 26  & žádná omezení \\
+	\hline
+\end{tabular}
+
+\heading{Příklady}
+
+
+\sampleIN
+4 4 1 4
+1 2 (
+2 2 [
+2 3 ]
+3 4 )
+\sampleOUT
+4
+\sampleEND
+\sampleIN
+5 4 1 5
+1 2 <
+2 3 \{
+3 4 >
+4 5 \}
+\sampleOUT
+-1
+
+\sampleEND
+
+
+
+\end{document}
