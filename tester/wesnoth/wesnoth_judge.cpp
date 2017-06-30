@@ -118,6 +118,7 @@ int main(int argc, char** argv)
 		
 #define WRONG \
 	fprintf(stdout, "0\n"); \
+	fprintf(stderr, "Output isn't correct"); \
 	return 0
 		
 		int dOut, bOut;
@@ -157,5 +158,6 @@ int main(int argc, char** argv)
 	}
 	
 	fprintf(stdout, "1\n");
+	fprintf(stderr, "Output is correct");
 	return 0;
 }
